@@ -11,8 +11,22 @@
   <link rel="stylesheet" href="/css/shop.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到正文</a>
   <div class="grain" aria-hidden="true"></div>
-  <main class="checkout-layout" style="text-align:center">
+  <header class="site-header site-header--lux">
+    <a class="logo logo--lux" href="/">Lhasa Sa</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav site-nav--lux" aria-label="主导航">
+      <a href="/shop/">商店</a>
+      <a href="/#collection">精选</a>
+      <a href="/#story">品牌</a>
+      <a href="/guestbook.html">留言</a>
+      <a href="/#contact">联系</a>
+    </nav>
+  </header>
+  <main id="main" class="checkout-layout" style="text-align:center">
     <h1>支付未完成或已取消</h1>
     <p class="checkout-lead">购物车仍保留，可返回结算页重试。若已扣款仍显示失败，请保留空中云汇凭证并联系客服核对。</p>
     <p><a class="btn btn-primary" href="/shop/checkout.html">返回结算</a></p>
