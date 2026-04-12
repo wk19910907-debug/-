@@ -11,6 +11,8 @@
   --serif-en: "Cormorant Garamond", "Noto Serif SC", serif;
   --space: clamp(1.25rem, 4vw, 3rem);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --lux-bg-spot: radial-gradient(ellipse 115% 65% at 50% -18%, rgba(201, 169, 98, 0.16) 0%, transparent 54%);
+  --lux-bg-deep: radial-gradient(108% 80% at 50% 8%, #1c2a42 0%, var(--lux-void) 44%, #000000 100%);
 }
 
 *,
@@ -22,11 +24,9 @@
 html {
   scroll-behavior: smooth;
   min-height: 100%;
-  /* 与旧版相比：顶层增加极淡金雾、底层更压黑，肉眼可辨且仍属同一 lux 色系 */
+  /* html + body 双写背景：避免个别浏览器只绘 body 或只绘 html 时「像没改」 */
   background-color: #010205;
-  background-image:
-    radial-gradient(ellipse 115% 65% at 50% -18%, rgba(201, 169, 98, 0.11) 0%, transparent 54%),
-    radial-gradient(108% 80% at 50% 8%, #1c2a42 0%, var(--lux-void) 44%, #000000 100%);
+  background-image: var(--lux-bg-spot), var(--lux-bg-deep);
   background-attachment: fixed;
 }
 
@@ -37,7 +37,9 @@ body {
   font-size: 1.0625rem;
   line-height: 1.75;
   color: var(--ink);
-  background: transparent;
+  background-color: #010205;
+  background-image: var(--lux-bg-spot), var(--lux-bg-deep);
+  background-attachment: fixed;
 }
 
 .grain {
