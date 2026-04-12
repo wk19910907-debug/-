@@ -19,13 +19,51 @@
     return h;
   }
 
+  function cardHtml(p, compact) {
+    var hu = hueFromId(p.id || "");
+    var grad =
+      "linear-gradient(160deg,hsl(" +
+      hu +
+      ",22%,14%) 0%,hsl(" +
+      ((hu + 35) % 360) +
+      ",18%,8%) 100%)";
+    var badge = p.badge
+      ? '<span class="home-spot-badge">' + escapeHtml(p.badge) + "</span>"
+      : "";
+    var initial =
+      '<span class="home-spot-initial" aria-hidden="true">' +
+      escapeHtml((p.name || "?").slice(0, 1)) +
+      "</span>";
+    var visual =
+      '<div class="home-spot-visual" style="background:' + grad + '">' +
+      badge +
+      initial +
+      "</div>";
+    var body =
+      '<div class="home-spot-body">' +
+      '<span class="home-spot-cat">' +
+      escapeHtml(p.category || "") +
+      "</span>" +
+      '<h3 class="home-spot-name">' +
+      escapeHtml(p.name || "") +
+      "</h3>" +
+      '<p class="home-spot-price">' +
+      money(Number(p.price) || 0) +
+      "</p>" +
+      "</div>";
+    var cls = "home-spot-card";
+    if (compact) cls += " home-spot-card--compact";
+    else cls += " home-spot-card--lead";
+    return '<a class="' + cls + '" href="/shop/">' + visual + body + "</a>";
+  }
+
   fetch("/data/products.json")
     .then(function (r) {
       return r.json();
     })
     .then(function (products) {
       if (!Array.isArray(products) || !products.length) {
-        root.innerHTML = "<p class=\"home-featured-fallback\">精选载入中…</p>";
+        root.innerHTML = '<p class="home-featured-fallback">精选载入中…</p>';
         return;
       }
       var withBadge = products.filter(function (p) {
@@ -35,38 +73,22 @@
         withBadge.length >= 4
           ? withBadge.slice(0, 4)
           : products.slice(0, 4);
-      root.innerHTML = list
+      var lead = cardHtml(list[0], false);
+      var rest = list
+        .slice(1)
         .map(function (p) {
-          var hu = hueFromId(p.id || "");
-          return (
-            '<a class="home-spot-card" href="/shop/">' +
-            '<div class="home-spot-visual" style="background:linear-gradient(160deg,hsl(' +
-            hu +
-            ',22%,14%) 0%,hsl(' +
-            ((hu + 35) % 360) +
-            ',18%,8%) 100%)">' +
-            (p.badge
-              ? '<span class="home-spot-badge">' + escapeHtml(p.badge) + "</span>"
-              : "") +
-            '<span class="home-spot-initial" aria-hidden="true">' +
-            escapeHtml((p.name || "?").slice(0, 1)) +
-            "</span>" +
-            "</div>" +
-            '<div class="home-spot-body">' +
-            '<span class="home-spot-cat">' +
-            escapeHtml(p.category || "") +
-            "</span>" +
-            "<h3 class=\"home-spot-name\">" +
-            escapeHtml(p.name || "") +
-            "</h3>" +
-            '<p class="home-spot-price">' +
-            money(Number(p.price) || 0) +
-            "</p>" +
-            "</div>" +
-            "</a>"
-          );
+          return cardHtml(p, true);
         })
         .join("");
+      root.innerHTML =
+        '<div class="home-featured-magazine">' +
+        '<div class="home-featured-lead">' +
+        lead +
+        "</div>" +
+        '<div class="home-featured-stack">' +
+        rest +
+        "</div>" +
+        "</div>";
     })
     .catch(function () {
       root.innerHTML =
