@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lhasa Sa 商城 — 高原手选好物，诚意上架。" />
+  <link rel="canonical" href="https://lhasasa-tashidelek.com/shop/" />
+  <title>商城 · Lhasa Sa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a2744'/%3E%3Cpath d='M8 20c4-8 12-8 16 0' fill='none' stroke='%23c9a962' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="/">Lhasa Sa</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/shop/" aria-current="page">商城</a>
+      <a href="/#contact">联系</a>
+    </nav>
+  </header>
+
+  <main class="shop-layout">
+    <div class="shop-hero">
+      <h1>高原手选 · 商城</h1>
+      <p>以下为演示商品与购物车流程。正式营业需接入支付、库存与物流接口。</p>
+    </div>
+
+    <div class="shop-toolbar">
+      <div id="shop-filters" class="shop-filters" aria-label="分类筛选"></div>
+      <button type="button" class="cart-launch" id="cart-launch" aria-controls="cart-drawer" aria-expanded="false">
+        购物车 <span class="count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div id="product-grid" class="product-grid" aria-live="polite"></div>
+  </main>
+
+  <div id="cart-drawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-label="购物车">
+    <div class="cart-drawer-backdrop" tabindex="-1"></div>
+    <div class="cart-drawer-panel">
+      <div class="cart-drawer-head">
+        <h2>购物车</h2>
+        <button type="button" class="cart-close" id="cart-close" aria-label="关闭">×</button>
+      </div>
+      <div class="cart-lines" id="cart-lines"></div>
+      <div class="cart-foot">
+        <div class="cart-total">
+          <span>合计</span>
+          <strong id="cart-total-num">¥0</strong>
+        </div>
+        <a class="checkout-link" id="checkout-link" href="/shop/checkout.html" aria-disabled="true">去结算</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© <span id="y"></span> Lhasa Sa · Tashi Delek</p>
+  </footer>
+
+  <script src="/js/shop.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/shop-page.js"></script>
+</body>
+</html>

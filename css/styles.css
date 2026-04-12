@@ -217,6 +217,28 @@ main {
   box-shadow: 0 12px 40px rgba(201, 169, 98, 0.45);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(201, 169, 98, 0.45);
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+}
+
 .section {
   padding: clamp(4rem, 12vw, 7rem) var(--space);
 }
