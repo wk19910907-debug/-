@@ -1,6 +1,6 @@
 # lhasasa-tashidelek.com
 
-静态官网源码，部署于 [Vercel](https://vercel.com)。根目录 `index.html` 可直接构建。
+静态官网 + **演示商城**（`/shop/`：商品 JSON、购物车 localStorage、结算页复制订单），部署于 [Vercel](https://vercel.com)。正式收款需后端或 Shopify / Stripe 等。
 
 ## Vercel 控制台（推荐）
 
