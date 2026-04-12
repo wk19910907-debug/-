@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="顾客留言 · Lhasa Sa 宠物馆" />
+  <link rel="canonical" href="https://lhasasa-tashidelek.com/guestbook.html" />
+  <title>顾客留言 · Lhasa Sa 宠物馆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a2744'/%3E%3Cpath d='M8 20c4-8 12-8 16 0' fill='none' stroke='%23c9a962' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="/">Lhasa Sa</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/shop/">宠物馆</a>
+      <a href="/guestbook.html" aria-current="page">留言</a>
+      <a href="/#contact">联系</a>
+    </nav>
+  </header>
+
+  <main class="checkout-layout" style="max-width: 800px">
+    <h1>顾客留言</h1>
+    <p class="checkout-lead">
+      精选展示为运营审核后写入站点的内容。您提交的新留言会经后台通知（需配置 Vercel 环境变量 <code>GUESTBOOK_WEBHOOK_URL</code>），通过后再合并到 <code>data/guestbook.json</code>。
+    </p>
+
+    <section class="checkout-card" aria-labelledby="list-h">
+      <h2 id="list-h">大家怎么说</h2>
+      <div id="guestbook-list" class="guestbook-list" aria-live="polite">
+        <p class="cart-empty">加载中…</p>
+      </div>
+    </section>
+
+    <section class="checkout-card" aria-labelledby="form-h">
+      <h2 id="form-h">写一条留言</h2>
+      <form id="guestbook-form" class="form-grid">
+        <div class="form-field">
+          <label for="gb-name">称呼</label>
+          <input id="gb-name" name="name" type="text" required maxlength="80" autocomplete="nickname" placeholder="怎么称呼您" />
+        </div>
+        <div class="form-field">
+          <label for="gb-email">邮箱（选填）</label>
+          <input id="gb-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="方便回复时联系" />
+        </div>
+        <div class="form-field">
+          <label for="gb-message">留言内容</label>
+          <textarea id="gb-message" name="message" required maxlength="2000" placeholder="购物体验、养宠心得、建议都欢迎…"></textarea>
+        </div>
+        <button type="submit" class="submit-order" id="gb-submit">提交留言</button>
+      </form>
+      <p id="gb-feedback" class="notice-box" style="display: none; margin-top: 1rem" role="status"></p>
+    </section>
+
+    <a class="back-shop" href="/shop/">← 返回宠物馆</a>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="y"></span> Lhasa Sa · 宠物馆</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/guestbook-page.js"></script>
+</body>
+</html>

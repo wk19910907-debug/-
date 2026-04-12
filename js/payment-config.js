@@ -17,4 +17,9 @@ window.LTS_AIRWALLEX = {
   intentUrl: "",
   countryCode: "CN",
   currency: "CNY",
+  /** SDK 加载失败时的备用 ESM 地址（一般无需修改） */
+  sdkImportUrls: [
+    "https://esm.sh/@airwallex/components-sdk@1.28.3",
+    "https://cdn.jsdelivr.net/npm/@airwallex/components-sdk@1.28.3/+esm",
+  ],
 };

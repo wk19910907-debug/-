@@ -1,0 +1,11 @@
+# 复制到 Vercel 项目 Environment Variables（本仓库为静态站 + Serverless API）
+
+# --- 留言 API（api/guestbook.js）---
+# 选填：Discord / Slack Incoming Webhook / 自建 HTTPS，接收 JSON 留言体
+GUESTBOOK_WEBHOOK_URL=
+
+# 选填：若前端与 API 不同源时配置，逗号分隔 Origin；同域部署可留空
+# GUESTBOOK_ALLOWED_ORIGINS=https://lhasasa-tashidelek.com,https://www.lhasasa-tashidelek.com
+
+# --- 空中云汇（浏览器侧填 js/payment-config.js；密钥只在 thangka-shop 服务端）---
+# 见 README 与 payment-config.js 注释

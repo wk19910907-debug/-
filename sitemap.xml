@@ -16,8 +16,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lhasasa-tashidelek.com/guestbook.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://lhasasa-tashidelek.com/shop/payment-success.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://lhasasa-tashidelek.com/shop/payment-fail.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>

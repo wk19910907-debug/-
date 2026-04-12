@@ -7,7 +7,18 @@
 1. 将 **thangka-shop** 部署到公网，在 Vercel 环境变量中配置 `AIRWALLEX_CLIENT_ID`、`AIRWALLEX_API_KEY`、`AIRWALLEX_ENV`，并将 **`AIRWALLEX_INTENT_ALLOWED_ORIGINS`** 设为：  
    `https://lhasasa-tashidelek.com,https://www.lhasasa-tashidelek.com`  
 2. 在本仓库编辑 **`js/payment-config.js`**：填入 `clientId`（Web App Client ID）、`intentUrl`（例如 `https://你的-thangka.vercel.app/api/airwallex/intent`）、`env`（`demo`/`prod`）、`currency`（默认 `CNY`）。金额按「元 ×100」以分为单位发往 Intent API。  
-3. 重新部署本站点。支付成功后跳转到 `/shop/payment-success.html` 并清空购物车。
+3. 重新部署本站点。支付成功后跳转到 `/shop/payment-success.html` 并清空购物车；取消/失败可跳转 `/shop/payment-fail.html`（若空中云汇 SDK 接受 `failUrl`）。
+
+## 留言系统
+
+- 页面：`/guestbook.html`；精选展示读 `data/guestbook.json`（人工审核后合并进仓库）。
+- 提交：`POST /api/guestbook`（Vercel Serverless，见 `api/guestbook.js`）。在 Vercel 配置 **`GUESTBOOK_WEBHOOK_URL`** 转发到 Discord/Slack/自建服务接收 JSON。
+- 环境变量示例见 **`vercel-env.example.txt`**。
+
+## OpenClaw / Cursor 选品技能
+
+- 仓库内 **`skills/lhasa-pet-curation/SKILL.md`**：选品与维护 `products.json` 的流程说明；可复制到 OpenClaw 工作区 `skills/`。
+- Cursor 项目内副本：**`.cursor/skills/lhasa-pet-curation/SKILL.md`**。
 
 ## Vercel 控制台（推荐）
 

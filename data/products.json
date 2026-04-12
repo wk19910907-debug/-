@@ -18,7 +18,7 @@
   {
     "id": "pet-dental-stick",
     "name": "洁齿骨 · 中小型犬",
-    "category": "清洁护理",
+    "category": "主粮零食",
     "price": 45,
     "subtitle": "30 支装 · 鸡肉味",
     "badge": null
@@ -58,7 +58,7 @@
   {
     "id": "pet-shampoo-sensitive",
     "name": "低敏香波 · 犬用",
-    "category": "清洁护理",
+    "category": "清洁美容",
     "price": 72,
     "subtitle": "500ml · 燕麦舒缓",
     "badge": null
@@ -74,9 +74,369 @@
   {
     "id": "pet-toy-feather",
     "name": "逗猫棒替换头礼盒",
-    "category": "玩具",
+    "category": "玩具训练",
     "price": 29,
     "subtitle": "8 支装",
     "badge": null
+  },
+  {
+    "id": "pet-sku-1",
+    "name": "全价成猫粮·鲜鸡配方",
+    "category": "主粮零食",
+    "price": 89,
+    "subtitle": "2kg·无谷",
+    "badge": "热销"
+  },
+  {
+    "id": "pet-sku-2",
+    "name": "全价幼犬粮·羊肉糙米",
+    "category": "主粮零食",
+    "price": 76,
+    "subtitle": "1.5kg",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-3",
+    "name": "冻干双拼猫粮",
+    "category": "主粮零食",
+    "price": 58,
+    "subtitle": "500g",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-4",
+    "name": "主食猫罐头·混合口味",
+    "category": "主粮零食",
+    "price": 96,
+    "subtitle": "85g×12",
+    "badge": "新品"
+  },
+  {
+    "id": "pet-sku-5",
+    "name": "小型犬软颗粒粮",
+    "category": "主粮零食",
+    "price": 118,
+    "subtitle": "3kg",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-6",
+    "name": "宠物羊奶粉",
+    "category": "主粮零食",
+    "price": 65,
+    "subtitle": "400g",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-7",
+    "name": "益生菌肠胃宝",
+    "category": "医疗保健",
+    "price": 49,
+    "subtitle": "30袋",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-8",
+    "name": "体内外驱虫滴剂·犬用",
+    "category": "医疗保健",
+    "price": 68,
+    "subtitle": "单支",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-9",
+    "name": "体内外驱虫滴剂·猫用",
+    "category": "医疗保健",
+    "price": 62,
+    "subtitle": "单支",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-10",
+    "name": "宠物维生素软嚼粒",
+    "category": "医疗保健",
+    "price": 55,
+    "subtitle": "200g",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-11",
+    "name": "关节舒缓软骨素",
+    "category": "医疗保健",
+    "price": 128,
+    "subtitle": "120粒",
+    "badge": "推荐"
+  },
+  {
+    "id": "pet-sku-12",
+    "name": "低敏洗毛液·猫用",
+    "category": "清洁美容",
+    "price": 72,
+    "subtitle": "400ml",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-13",
+    "name": "犬用燕麦香波",
+    "category": "清洁美容",
+    "price": 69,
+    "subtitle": "500ml",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-14",
+    "name": "宠物湿巾·无香",
+    "category": "清洁美容",
+    "price": 35,
+    "subtitle": "80抽×3",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-15",
+    "name": "指甲剪套装",
+    "category": "清洁美容",
+    "price": 42,
+    "subtitle": "不锈钢",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-16",
+    "name": "宠物电推剪",
+    "category": "清洁美容",
+    "price": 158,
+    "subtitle": "低噪",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-17",
+    "name": "豆腐猫砂·绿茶",
+    "category": "日用耗材",
+    "price": 72,
+    "subtitle": "6L×2",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-18",
+    "name": "膨润土猫砂",
+    "category": "日用耗材",
+    "price": 48,
+    "subtitle": "10kg",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-19",
+    "name": "尿垫·加厚",
+    "category": "日用耗材",
+    "price": 88,
+    "subtitle": "M码100片",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-20",
+    "name": "智能饮水机·UV款",
+    "category": "智能用品",
+    "price": 228,
+    "subtitle": "3L",
+    "badge": "新品"
+  },
+  {
+    "id": "pet-sku-21",
+    "name": "自动猫砂盆·入门款",
+    "category": "智能用品",
+    "price": 1899,
+    "subtitle": "含垫料试用",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-22",
+    "name": "宠物摄像头·云台",
+    "category": "智能用品",
+    "price": 199,
+    "subtitle": "1080P",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-23",
+    "name": "车载宠物安全带",
+    "category": "出行装备",
+    "price": 39,
+    "subtitle": "通用",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-24",
+    "name": "折叠宠物围栏",
+    "category": "出行装备",
+    "price": 168,
+    "subtitle": "六片",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-25",
+    "name": "猫爬架·中型",
+    "category": "日用耗材",
+    "price": 328,
+    "subtitle": "剑麻柱",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-26",
+    "name": "漏食球·耐咬",
+    "category": "玩具训练",
+    "price": 45,
+    "subtitle": "L",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-27",
+    "name": "飞盘·软胶",
+    "category": "玩具训练",
+    "price": 28,
+    "subtitle": "犬用",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-28",
+    "name": "逗猫激光笔套装",
+    "category": "玩具训练",
+    "price": 32,
+    "subtitle": "充电",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-29",
+    "name": "嗅闻垫·益智",
+    "category": "玩具训练",
+    "price": 98,
+    "subtitle": "可机洗",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-30",
+    "name": "拾便袋·降解",
+    "category": "日用耗材",
+    "price": 22,
+    "subtitle": "6卷",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-31",
+    "name": "宠物粘毛滚筒",
+    "category": "日用耗材",
+    "price": 26,
+    "subtitle": "替换芯×5",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-32",
+    "name": "鱼缸外置过滤桶",
+    "category": "水族小宠",
+    "price": 268,
+    "subtitle": "小型",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-33",
+    "name": "观赏鱼粮·热带鱼",
+    "category": "主粮零食",
+    "price": 42,
+    "subtitle": "500ml",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-34",
+    "name": "兔粮·高纤维",
+    "category": "主粮零食",
+    "price": 56,
+    "subtitle": "2.5kg",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-35",
+    "name": "仓鼠浴沙",
+    "category": "清洁美容",
+    "price": 29,
+    "subtitle": "2kg",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-36",
+    "name": "宠物烘干箱·家用",
+    "category": "智能用品",
+    "price": 1299,
+    "subtitle": "猫咪小型犬",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-37",
+    "name": "宠物急救包",
+    "category": "医疗保健",
+    "price": 119,
+    "subtitle": "基础款",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-38",
+    "name": "伊丽莎白圈·可调",
+    "category": "医疗保健",
+    "price": 25,
+    "subtitle": "猫狗通用",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-39",
+    "name": "宠物冰垫·夏季",
+    "category": "日用耗材",
+    "price": 48,
+    "subtitle": "M",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-40",
+    "name": "训练响片+零食袋",
+    "category": "主粮零食",
+    "price": 36,
+    "subtitle": "套装",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-41",
+    "name": "猫抓板·瓦楞纸隧道",
+    "category": "玩具训练",
+    "price": 79,
+    "subtitle": "大号",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-42",
+    "name": "犬用雨衣·反光",
+    "category": "出行装备",
+    "price": 88,
+    "subtitle": "XL",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-43",
+    "name": "宠物楼梯·海绵",
+    "category": "出行装备",
+    "price": 156,
+    "subtitle": "三层",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-44",
+    "name": "离乳期奶糕罐头",
+    "category": "主粮零食",
+    "price": 54,
+    "subtitle": "猫用 · 6 罐",
+    "badge": null
+  },
+  {
+    "id": "pet-sku-45",
+    "name": "处方粮咨询预约金（联系客服）",
+    "category": "主粮零食",
+    "price": 1,
+    "subtitle": "非发货商品 · 可抵扣正式订单",
+    "badge": "咨询"
   }
 ]

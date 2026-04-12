@@ -65,7 +65,21 @@
 
   function loadAirwallexSdk() {
     if (window.__lts_awx_sdk) return Promise.resolve(window.__lts_awx_sdk);
-    return import("https://esm.sh/@airwallex/components-sdk@1.28.3").then(function (mod) {
+    var cfg = window.LTS_AIRWALLEX || {};
+    var urls = Array.isArray(cfg.sdkImportUrls) && cfg.sdkImportUrls.length
+      ? cfg.sdkImportUrls
+      : ["https://esm.sh/@airwallex/components-sdk@1.28.3"];
+
+    function tryImport(i) {
+      if (i >= urls.length) {
+        return Promise.reject(new Error("Airwallex SDK 全部 CDN 加载失败"));
+      }
+      return import(/* webpackIgnore: true */ urls[i]).catch(function () {
+        return tryImport(i + 1);
+      });
+    }
+
+    return tryImport(0).then(function (mod) {
       window.__lts_awx_sdk = mod;
       return mod;
     });
@@ -121,12 +135,14 @@
             var origin = window.location.origin;
             var successUrl =
               origin + "/shop/payment-success.html?status=success&order=" + encodeURIComponent(oid);
+            var failUrl = origin + "/shop/payment-fail.html";
             return payments.redirectToCheckout({
               intent_id: data.id,
               client_secret: data.client_secret,
               currency: data.currency,
               country_code: cfg.countryCode || "CN",
               successUrl: successUrl,
+              failUrl: failUrl,
             });
           });
         });
