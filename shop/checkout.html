@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="结算 — Lhasa Sa 商城" />
   <link rel="canonical" href="https://lhasasa-tashidelek.com/shop/checkout.html" />
-  <title>结算 · Lhasa Sa</title>
+  <title>结算 · Lhasa Sa 宠物馆</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -22,14 +22,14 @@
     </button>
     <nav id="site-nav" class="site-nav" aria-label="主导航">
       <a href="/">首页</a>
-      <a href="/shop/">商城</a>
+      <a href="/shop/">宠物馆</a>
       <a href="/#contact">联系</a>
     </nav>
   </header>
 
   <main class="checkout-layout">
     <h1>订单结算</h1>
-    <p class="checkout-lead">请核对商品与金额，填写收货信息。当前为演示流程，提交后不会扣款。</p>
+    <p class="checkout-lead">请核对商品与金额，填写收货信息。若已配置空中云汇，将跳转安全收银台；否则仅复制订单文本。</p>
 
     <section class="checkout-card" aria-labelledby="sum-h">
       <h2 id="sum-h">订单明细</h2>
@@ -62,7 +62,7 @@
         <button type="submit" class="submit-order">提交订单（演示）</button>
       </form>
       <p class="notice-box">
-        正式上线时，可在此接入微信支付、支付宝、Stripe 或 Shopify Checkout；并连接库存与物流 API。OpenClaw 适合在本地生成/维护代码与运营脚本，支付密钥须放在服务端环境变量，切勿写进前端仓库。
+        <strong>空中云汇：</strong>API Key 仅放在已部署的 <code>thangka-shop</code>（或你的 Next API）服务端环境变量；本静态站只放 <code>NEXT_PUBLIC</code> 级 Client ID 与 Intent URL（见 <code>js/payment-config.js</code>）。请在另一站点配置 <code>AIRWALLEX_INTENT_ALLOWED_ORIGINS</code> 包含本店域名，否则浏览器会拦截跨域请求。
       </p>
     </section>
 
@@ -74,6 +74,7 @@
   </footer>
 
   <script src="/js/shop.js"></script>
+  <script src="/js/payment-config.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/checkout-page.js"></script>
 </body>

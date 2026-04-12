@@ -1,66 +1,82 @@
 [
   {
-    "id": "p-handmade-incense",
-    "name": "手作藏香 · 晨雾",
-    "category": "香道",
-    "price": 128,
-    "subtitle": "30 支装 · 植物配方",
-    "badge": "新品"
-  },
-  {
-    "id": "p-yak-jerky",
-    "name": "高原牦牛肉干",
-    "category": "食品",
-    "price": 98,
-    "subtitle": "200g · 微辣 / 原味可选",
+    "id": "pet-freeze-dried-chicken",
+    "name": "冻干鸡肉粒 · 猫狗通用",
+    "category": "主粮零食",
+    "price": 68,
+    "subtitle": "500g 锁鲜装 · 无谷配方",
     "badge": "热销"
   },
   {
-    "id": "p-wool-scarf",
-    "name": "羊毛披肩围巾",
-    "category": "服饰",
-    "price": 368,
-    "subtitle": "手工染色 · 限定色",
+    "id": "pet-salmon-kitten",
+    "name": "幼猫三文鱼奶糕粮",
+    "category": "主粮零食",
+    "price": 128,
+    "subtitle": "2kg · DHA 添加",
+    "badge": "新品"
+  },
+  {
+    "id": "pet-dental-stick",
+    "name": "洁齿骨 · 中小型犬",
+    "category": "清洁护理",
+    "price": 45,
+    "subtitle": "30 支装 · 鸡肉味",
     "badge": null
   },
   {
-    "id": "p-silver-bracelet",
-    "name": "手工银饰手环",
-    "category": "首饰",
-    "price": 520,
-    "subtitle": "足银 · 可调节围度",
-    "badge": "匠作"
-  },
-  {
-    "id": "p-butter-tea-block",
-    "name": "酥油茶砖礼盒",
-    "category": "食品",
-    "price": 168,
-    "subtitle": "礼盒装 · 伴手礼",
+    "id": "pet-self-clean-litter",
+    "name": "豆腐猫砂 · 低尘",
+    "category": "日用耗材",
+    "price": 39,
+    "subtitle": "6L × 4 袋",
     "badge": null
   },
   {
-    "id": "p-thangka-mini",
-    "name": "微缩唐卡挂画",
-    "category": "艺术",
-    "price": 880,
-    "subtitle": "画芯 20×30cm · 含框",
-    "badge": "限量"
-  },
-  {
-    "id": "p-yak-milk-soap",
-    "name": "牦牛奶手工皂套装",
-    "category": "个护",
-    "price": 86,
-    "subtitle": "三块装 · 冷制皂",
+    "id": "pet-carrier-airline",
+    "name": "航空箱 · 中型犬/猫",
+    "category": "出行装备",
+    "price": 268,
+    "subtitle": "符合多数航司托运尺寸",
     "badge": null
   },
   {
-    "id": "p-tea-tuocha",
-    "name": "普洱小沱茶",
-    "category": "食品",
-    "price": 138,
-    "subtitle": "250g · 年份拼配",
+    "id": "pet-auto-feeder",
+    "name": "智能喂食器 Wi‑Fi",
+    "category": "智能用品",
+    "price": 399,
+    "subtitle": "定时定量 · App 远程",
+    "badge": "推荐"
+  },
+  {
+    "id": "pet-water-fountain",
+    "name": "循环饮水机 · 静音泵",
+    "category": "智能用品",
+    "price": 158,
+    "subtitle": "2.5L · 滤芯可换",
+    "badge": null
+  },
+  {
+    "id": "pet-shampoo-sensitive",
+    "name": "低敏香波 · 犬用",
+    "category": "清洁护理",
+    "price": 72,
+    "subtitle": "500ml · 燕麦舒缓",
+    "badge": null
+  },
+  {
+    "id": "pet-leash-set",
+    "name": "防爆冲胸背带套装",
+    "category": "出行装备",
+    "price": 118,
+    "subtitle": "反光条 · M/L 可选",
+    "badge": null
+  },
+  {
+    "id": "pet-toy-feather",
+    "name": "逗猫棒替换头礼盒",
+    "category": "玩具",
+    "price": 29,
+    "subtitle": "8 支装",
     "badge": null
   }
 ]
