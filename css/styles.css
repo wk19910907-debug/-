@@ -202,7 +202,7 @@ main {
   font-size: 0.95rem;
   letter-spacing: 0.12em;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 0;
   transition: transform 0.2s var(--ease-out), box-shadow 0.2s;
 }
 
@@ -298,7 +298,7 @@ main {
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(201, 169, 98, 0.15);
-  border-radius: 4px;
+  border-radius: 0;
   transition: border-color 0.25s, background 0.25s;
 }
 
@@ -363,6 +363,22 @@ main {
 
 .site-footer p {
   margin: 0;
+}
+
+/* 正文内行内代码（全站） */
+main code {
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace;
+  font-size: 0.84em;
+  padding: 0.15em 0.4em;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 169, 98, 0.2);
+  color: rgba(232, 228, 220, 0.92);
+}
+
+main strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 /* ========== 首页 · 奢侈品电商式信息架构（原创品牌，非第三方站点复刻） ========== */

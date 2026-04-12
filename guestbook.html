@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/css/shop.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a2744'/%3E%3Cpath d='M8 20c4-8 12-8 16 0' fill='none' stroke='%23c9a962' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
-<body>
+<body class="page-site">
   <a class="skip-link" href="#main">跳到正文</a>
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header site-header--lux">
@@ -31,10 +31,13 @@
   </header>
 
   <main id="main" class="checkout-layout" style="max-width: 800px">
-    <h1>顾客留言</h1>
-    <p class="checkout-lead">
-      精选展示为运营审核后写入站点的内容。您提交的新留言会经后台通知（需配置 Vercel 环境变量 <code>GUESTBOOK_WEBHOOK_URL</code>），通过后再合并到 <code>data/guestbook.json</code>。
-    </p>
+    <header class="page-intro-lux">
+      <p class="page-intro-lux__kicker">Guestbook · 留言</p>
+      <h1>顾客留言</h1>
+      <p class="checkout-lead">
+        精选展示为运营审核后写入站点的内容。您提交的新留言会经后台通知（需配置 Vercel 环境变量 <code>GUESTBOOK_WEBHOOK_URL</code>），通过后再合并到 <code>data/guestbook.json</code>。
+      </p>
+    </header>
 
     <section class="checkout-card" aria-labelledby="list-h">
       <h2 id="list-h">大家怎么说</h2>
