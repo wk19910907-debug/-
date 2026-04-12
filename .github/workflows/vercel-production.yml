@@ -4,10 +4,10 @@
 
 name: Vercel Production
 
+# 配置好 Secrets 后，也可改为在 push 到 main 时自动部署：
+# on: { push: { branches: [main] } }
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
