@@ -21,12 +21,13 @@
 
   function cardHtml(p, compact) {
     var hu = hueFromId(p.id || "");
+    var h2 = (hu + 28) % 360;
     var grad =
-      "linear-gradient(160deg,hsl(" +
+      "linear-gradient(155deg,hsl(" +
       hu +
-      ",22%,14%) 0%,hsl(" +
-      ((hu + 35) % 360) +
-      ",18%,8%) 100%)";
+      ",6%,94%) 0%,hsl(" +
+      h2 +
+      ",5%,88%) 100%)";
     var badge = p.badge
       ? '<span class="home-spot-badge">' + escapeHtml(p.badge) + "</span>"
       : "";

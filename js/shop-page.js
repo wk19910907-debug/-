@@ -101,9 +101,9 @@
           '">' +
           '<div class="product-visual" style="background:linear-gradient(145deg,hsl(' +
           hue +
-          ',35%,18%) 0%,hsl(' +
+          ',7%,93%) 0%,hsl(' +
           ((hue + 40) % 360) +
-          ',28%,12%) 100%)">' +
+          ',5%,87%) 100%)">' +
           badge +
           '<span aria-hidden="true">' +
           escapeHtml(p.name.slice(0, 1)) +
