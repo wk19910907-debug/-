@@ -52,6 +52,8 @@
   --header-pad-y: 1rem;
   --header-pad-x: var(--space);
   --nav-gap: 2rem;
+  --meta-size: 0.82rem;
+  --meta-kern: 0.06em;
 }
 
 *,
