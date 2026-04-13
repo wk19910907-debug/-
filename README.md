@@ -20,6 +20,14 @@
 - 仓库内 **`skills/lhasa-pet-curation/SKILL.md`**：选品与维护 `products.json` 的流程说明；可复制到 OpenClaw 工作区 `skills/`。
 - Cursor 项目内副本：**`.cursor/skills/lhasa-pet-curation/SKILL.md`**。
 
+## 排版规范（2026-04）
+
+- **统一标题比例**：模块主标题统一使用 `--title-clamp` 与 `--title-kern`，避免页面间字阶漂移。
+- **统一正文节奏**：导语/说明文本统一使用 `--body-size` 与 `--body-line`。
+- **统一卡片体系**：卡片容器统一复用 `--card-pad`、`--card-border`、`--card-bg`（首页精选、商品卡、结算卡、留言卡）。
+- **统一容器宽度**：内容宽度遵循 `--module-max` 与 `--module-read`，首选在 CSS 变量层改，不在 HTML 内联宽度。
+- **统一区块留白**：主区块纵向间距遵循 `--pad-section-y` / `--pad-strip-y` / `--module-block-gap`。
+
 ## Vercel 控制台（推荐）
 
 Import 本仓库 → Framework **Other** → Output Directory **`.`** → 在 **Domains** 绑定 `lhasasa-tashidelek.com`，再按提示在阿里云 DNS 添加记录。

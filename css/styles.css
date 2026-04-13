@@ -36,6 +36,13 @@
   --module-block-gap: 2.5rem;
   --pad-section-y: clamp(4rem, 11vw, 6.5rem);
   --pad-strip-y: clamp(2.75rem, 7vw, 4rem);
+  --title-clamp: clamp(1.12rem, 2.4vw, 1.42rem);
+  --title-kern: 0.26em;
+  --body-size: 0.9375rem;
+  --body-line: 1.75;
+  --card-pad: 1.25rem;
+  --card-bg: var(--page-elevated);
+  --card-border: 1px solid var(--line);
 }
 
 *,
@@ -329,10 +336,10 @@ main {
 
 .value-card {
   margin: 0;
-  padding: 1.75rem 1.5rem;
+  padding: var(--card-pad);
   text-align: center;
-  background: var(--page-elevated);
-  border: 1px solid var(--line);
+  background: var(--card-bg);
+  border: var(--card-border);
   border-radius: 0;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
@@ -363,8 +370,8 @@ main {
 
 .value-card p {
   margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.75;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--ink-muted);
 }
 
@@ -600,9 +607,9 @@ main strong {
 .page-intro-lux h1,
 .checkout-layout h1 {
   font-family: var(--sans-ui);
-  font-size: clamp(1.12rem, 2.4vw, 1.42rem);
+  font-size: var(--title-clamp);
   font-weight: 500;
-  letter-spacing: 0.26em;
+  letter-spacing: var(--title-kern);
   text-transform: uppercase;
   color: var(--ink);
   line-height: 1.35;
@@ -620,8 +627,8 @@ main strong {
   max-width: var(--module-read);
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.9375rem;
-  line-height: 1.75;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--ink-muted);
 }
 
@@ -709,8 +716,8 @@ main strong {
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--line);
-  background: var(--page-elevated);
+  border: var(--card-border);
+  background: var(--card-bg);
   transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
@@ -787,7 +794,7 @@ main strong {
 }
 
 .home-spot-body {
-  padding: 1rem 1rem 1.25rem;
+  padding: var(--card-pad);
   text-align: left;
 }
 

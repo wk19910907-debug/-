@@ -106,10 +106,10 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(10, 10, 10, 0.12);
+  border: var(--card-border);
   border-radius: 0;
   overflow: hidden;
-  background: var(--page-elevated);
+  background: var(--card-bg);
   transition: border-color 0.25s, transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
 }
 
@@ -148,7 +148,7 @@
 }
 
 .product-body {
-  padding: 1rem 1.1rem 1.15rem;
+  padding: var(--card-pad);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -166,15 +166,16 @@
 
 .product-name {
   margin: 0;
-  font-size: 1.08rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   line-height: 1.35;
 }
 
 .product-sub {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--ink-muted);
   flex: 1;
 }
@@ -305,7 +306,8 @@
 
 .cart-empty {
   color: var(--ink-muted);
-  font-size: 0.95rem;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   text-align: center;
   padding: 2rem 0;
 }
@@ -451,11 +453,11 @@
 }
 
 .checkout-card {
-  border: 1px solid var(--line);
+  border: var(--card-border);
   border-radius: 0;
-  padding: 1.25rem 1.35rem;
+  padding: var(--card-pad);
   margin-bottom: 1.25rem;
-  background: var(--page-elevated);
+  background: var(--card-bg);
 }
 
 .checkout-card h2 {
@@ -490,7 +492,8 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.5rem 0;
-  font-size: 0.92rem;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   border-bottom: 1px dashed var(--line);
 }
 
@@ -517,7 +520,8 @@
   width: 100%;
   padding: 0.65rem 0.75rem;
   font-family: var(--sans-sc);
-  font-size: 0.95rem;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   border: 1px solid var(--line-strong);
   border-radius: 0;
   background: var(--page-elevated);
@@ -574,9 +578,9 @@
 }
 
 .notice-box {
-  font-size: 0.85rem;
+  font-size: var(--body-size);
   color: var(--ink-muted);
-  line-height: 1.65;
+  line-height: var(--body-line);
   padding: 0.85rem 1rem;
   border-radius: 0;
   background: rgba(10, 10, 10, 0.06);
@@ -593,17 +597,17 @@
 
 .guestbook-item {
   margin: 0;
-  padding: 1rem 1.1rem;
-  border: 1px solid rgba(10, 10, 10, 0.1);
+  padding: var(--card-pad);
+  border: var(--card-border);
   border-left: 3px solid var(--ink);
-  background: rgba(255, 255, 255, 0.58);
+  background: var(--card-bg);
   border-radius: 0;
 }
 
 .guestbook-msg {
   margin: 0 0 0.65rem;
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
   color: var(--ink);
 }
 
