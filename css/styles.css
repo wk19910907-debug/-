@@ -28,6 +28,14 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --lux-bg-spot: radial-gradient(ellipse 90% 55% at 50% -10%, rgba(255, 255, 255, 0.9) 0%, transparent 55%);
   --lux-bg-deep: radial-gradient(ellipse 100% 80% at 50% 100%, var(--page-2) 0%, var(--page) 52%, #fdfcfa 100%);
+  /* 模块排版：全站统一栏宽、节奏与标题层级 */
+  --module-max: 1100px;
+  --module-read: 38rem;
+  --module-header-gap: 0.65rem;
+  --module-after-title: 1rem;
+  --module-block-gap: 2.5rem;
+  --pad-section-y: clamp(4rem, 11vw, 6.5rem);
+  --pad-strip-y: clamp(2.75rem, 7vw, 4rem);
 }
 
 *,
@@ -99,7 +107,7 @@ body {
   color: var(--ink-muted);
   text-decoration: none;
   font-family: var(--sans-ui);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -274,26 +282,16 @@ main {
 }
 
 .section {
-  padding: clamp(4rem, 12vw, 7rem) var(--space);
+  padding: var(--pad-section-y) var(--space);
 }
 
 .section-inner {
-  max-width: 42rem;
+  max-width: var(--module-read);
   margin: 0 auto;
 }
 
 .section-inner--narrow {
-  max-width: 36rem;
-}
-
-.section-title {
-  margin: 0 0 1.75rem;
-  font-family: var(--sans-ui);
-  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink);
+  max-width: min(var(--module-read), 34rem);
 }
 
 .section-text {
@@ -332,6 +330,7 @@ main {
 .value-card {
   margin: 0;
   padding: 1.75rem 1.5rem;
+  text-align: center;
   background: var(--page-elevated);
   border: 1px solid var(--line);
   border-radius: 0;
@@ -364,7 +363,8 @@ main {
 
 .value-card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
+  line-height: 1.75;
   color: var(--ink-muted);
 }
 
@@ -373,7 +373,7 @@ main {
 }
 
 .section-contact .section-text {
-  text-align: left;
+  text-align: center;
 }
 
 .contact-domain {
@@ -454,8 +454,8 @@ main strong {
 }
 
 .site-nav--lux a {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -478,16 +478,6 @@ main strong {
   padding-left: 0;
   border-left: none;
   text-align: center;
-}
-
-.hero-kicker {
-  margin: 0 0 1.5rem;
-  font-family: var(--sans-ui);
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
 }
 
 .hero-title-lux {
@@ -516,11 +506,7 @@ main strong {
 }
 
 .hero-lead--lux {
-  max-width: 34rem;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.02rem;
-  line-height: 1.85;
+  margin-top: 0.25rem;
 }
 
 .hero-actions--lux {
@@ -546,11 +532,11 @@ main strong {
 .quote-strip {
   border-block: 1px solid var(--line);
   background: var(--page-2);
-  padding: clamp(2.5rem, 7vw, 4rem) var(--space);
+  padding: var(--pad-strip-y) var(--space);
 }
 
 .quote-strip-inner {
-  max-width: 1100px;
+  max-width: var(--module-max);
   margin: 0 auto;
   display: grid;
   gap: 2rem;
@@ -582,43 +568,87 @@ main strong {
   margin: 0;
   font-family: var(--serif-en);
   font-style: italic;
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: 0.9375rem;
   color: var(--ink-muted);
-  line-height: 1.55;
+  line-height: 1.75;
 }
 
 .section-wide {
-  max-width: 1100px;
+  max-width: var(--module-max);
   margin: 0 auto;
   padding-inline: var(--space);
 }
 
-.section-collection {
-  padding-top: clamp(3.5rem, 10vw, 5.5rem);
-  padding-bottom: clamp(3.5rem, 10vw, 5.5rem);
-}
-
-.collection-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.collection-title {
-  margin: 0 0 0.65rem;
+/* —— 模块小标题（kicker）：全站同一字阶与字距 —— */
+.hero-kicker,
+.section-kicker,
+.shop-hero-kicker,
+.page-intro-lux__kicker {
+  margin: 0 0 var(--module-header-gap);
   font-family: var(--sans-ui);
-  font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* —— 区块主标题（非首屏超大标题）：全站同一比例 —— */
+.collection-title,
+.section-title,
+.shop-hero h1,
+.page-intro-lux h1,
+.checkout-layout h1 {
+  font-family: var(--sans-ui);
+  font-size: clamp(1.12rem, 2.4vw, 1.42rem);
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--ink);
+  line-height: 1.35;
+  margin: 0 0 var(--module-after-title);
+}
+
+/* —— 导语 / 正文块：统一栏宽与行高 —— */
+.collection-sub,
+.hero-lead--lux,
+.checkout-lead,
+.shop-hero > p,
+.section-split-text > .section-text,
+.section-contact .section-text,
+.section-band-text {
+  max-width: var(--module-read);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+}
+
+.section-split-text > .section-text {
+  text-align: center;
+}
+
+.section-contact .section-text {
+  text-align: center;
+}
+
+.section-split-text .text-link-gold {
+  display: inline-block;
+  margin-top: 1.25rem;
+}
+
+.collection-header {
+  text-align: center;
+  margin-bottom: var(--module-block-gap);
 }
 
 .collection-sub {
-  margin: 0 0 1rem;
-  font-size: 0.92rem;
-  color: var(--ink-muted);
-  max-width: 28rem;
-  margin-inline: auto;
+  margin-bottom: 0.85rem;
+}
+
+.collection-header .text-link-gold {
+  margin-top: 0;
 }
 
 .text-link-gold {
@@ -800,7 +830,7 @@ main strong {
 }
 
 .section-split {
-  padding: clamp(4rem, 12vw, 7rem) 0;
+  padding: var(--pad-section-y) 0;
   background: linear-gradient(180deg, transparent, rgba(242, 241, 238, 0.9));
 }
 
@@ -817,27 +847,23 @@ main strong {
   }
 }
 
-.section-kicker {
-  margin: 0 0 0.5rem;
-  font-family: var(--sans-ui);
-  font-size: 0.62rem;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
 .section-kicker--center {
   text-align: center;
 }
 
 .section-title--left {
-  text-align: left;
+  text-align: center;
 }
 
 .section-title--center {
   text-align: center;
   margin-inline: auto;
+}
+
+.section-split-text {
+  text-align: center;
+  max-width: var(--module-read);
+  margin: 0 auto;
 }
 
 .section-split-text .section-title {
@@ -854,8 +880,9 @@ main strong {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 2rem;
+  align-items: center;
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3rem);
   background: linear-gradient(160deg, var(--page-elevated) 0%, var(--page-2) 100%);
   border: 1px solid var(--line);
 }
@@ -874,40 +901,32 @@ main strong {
 }
 
 .section-values--lux .section-title--center {
-  margin-bottom: 2rem;
+  margin-bottom: var(--module-block-gap);
 }
 
 .value-grid--lux {
-  max-width: 900px;
+  max-width: min(56rem, var(--module-max));
   margin: 0 auto;
 }
 
 .section-band {
-  padding: clamp(3rem, 8vw, 4.5rem) var(--space);
+  padding: var(--pad-strip-y) var(--space);
   text-align: center;
   border-block: 1px solid var(--line);
   background: var(--page-2);
 }
 
 .section-band-inner {
-  max-width: 36rem;
+  max-width: var(--module-read);
   margin: 0 auto;
 }
 
 .section-band-text {
-  margin: 0 0 1.5rem;
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-  color: var(--ink);
-  letter-spacing: 0.04em;
-  line-height: 1.7;
+  margin: 0 0 var(--module-block-gap);
 }
 
 .section-contact--lux .section-inner--narrow {
   text-align: center;
-}
-
-.section-contact--lux .section-text {
-  text-align: left;
 }
 
 .site-footer--lux {
@@ -917,8 +936,8 @@ main strong {
 }
 
 .footer-grid {
-  max-width: 1100px;
-  margin: 0 auto 2.5rem;
+  max-width: var(--module-max);
+  margin: 0 auto var(--module-block-gap);
   padding-inline: var(--space);
   display: grid;
   gap: 2rem;
