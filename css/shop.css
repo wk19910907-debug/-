@@ -41,7 +41,7 @@
   font-family: var(--sans-ui);
   font-size: 0.65rem;
   font-weight: 400;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--ui-kern-tight);
   text-transform: uppercase;
   padding: 0.5rem 0.95rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
@@ -64,9 +64,9 @@
   align-items: center;
   gap: 0.5rem;
   font-family: var(--sans-ui);
-  font-size: 0.68rem;
+  font-size: var(--ui-size);
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   padding: 0.6rem 1.1rem;
   border: 1px solid var(--line-strong);
@@ -204,9 +204,9 @@
 
 .add-btn {
   font-family: var(--sans-ui);
-  font-size: 0.65rem;
+  font-size: var(--ui-size);
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   padding: 0.55rem 1rem;
   border: 1px solid var(--ink);
@@ -383,9 +383,9 @@
   text-align: center;
   padding: 0.95rem 1rem;
   font-family: var(--sans-ui);
-  font-size: 0.68rem;
+  font-size: var(--ui-size);
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 0;
@@ -508,8 +508,8 @@
 
 .form-field label {
   display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: var(--ui-size);
+  letter-spacing: var(--ui-kern-tight);
   text-transform: uppercase;
   color: var(--ink-muted);
   margin-bottom: 0.4rem;
@@ -545,9 +545,9 @@
   margin-top: 0.5rem;
   padding: 0.95rem 1rem;
   font-family: var(--sans-ui);
-  font-size: 0.68rem;
+  font-size: var(--ui-size);
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   border: 1px solid var(--ink);
   border-radius: 0;

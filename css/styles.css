@@ -43,6 +43,15 @@
   --card-pad: 1.25rem;
   --card-bg: var(--page-elevated);
   --card-border: 1px solid var(--line);
+  --ui-size: 0.68rem;
+  --ui-kern: 0.2em;
+  --ui-kern-tight: 0.16em;
+  --btn-pad-y: 0.9rem;
+  --btn-pad-x: 2.25rem;
+  --btn-border: 1px solid var(--ink);
+  --header-pad-y: 1rem;
+  --header-pad-x: var(--space);
+  --nav-gap: 2rem;
 }
 
 *,
@@ -90,16 +99,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem var(--space);
+  padding: var(--header-pad-y) var(--header-pad-x);
   background: linear-gradient(to bottom, rgba(250, 249, 247, 0.97), rgba(250, 249, 247, 0.88), transparent);
   backdrop-filter: blur(10px);
 }
 
 .logo {
   font-family: var(--sans-ui);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
@@ -107,16 +116,16 @@ body {
 
 .site-nav {
   display: flex;
-  gap: 2rem;
+  gap: var(--nav-gap);
 }
 
 .site-nav a {
   color: var(--ink-muted);
   text-decoration: none;
   font-family: var(--sans-ui);
-  font-size: 0.68rem;
+  font-size: var(--ui-size);
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   transition: color 0.2s var(--ease-out);
 }
@@ -242,11 +251,11 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 2rem;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
   font-family: var(--sans-ui);
-  font-size: 0.72rem;
+  font-size: var(--ui-size);
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 0;
@@ -256,7 +265,7 @@ main {
 .btn-primary {
   color: var(--on-dark);
   background: var(--ink);
-  border: 1px solid var(--ink);
+  border: var(--btn-border);
   box-shadow: none;
 }
 
@@ -522,17 +531,17 @@ main strong {
 }
 
 .btn--lux {
-  padding: 0.95rem 2.25rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  font-size: var(--ui-size);
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
   border-radius: 0;
 }
 
 .btn--lux-ghost {
   border-radius: 0;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: var(--ui-size);
+  letter-spacing: var(--ui-kern);
   text-transform: uppercase;
 }
 
@@ -979,8 +988,9 @@ main strong {
 .footer-links a {
   color: var(--ink-soft);
   text-decoration: none;
-  font-size: 0.88rem;
-  letter-spacing: 0.04em;
+  font-family: var(--sans-sc);
+  font-size: var(--body-size);
+  letter-spacing: 0.01em;
 }
 
 .footer-links a:hover {
