@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=8" />
-  <link rel="stylesheet" href="/css/shop.css?v=8" />
+  <link rel="stylesheet" href="/css/styles.css?v=9" />
+  <link rel="stylesheet" href="/css/shop.css?v=9" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Cpath d='M8 20c4-8 12-8 16 0' fill='none' stroke='%23faf9f7' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
 <body class="page-site">
@@ -31,10 +31,20 @@
   </header>
 
   <main id="main" class="shop-layout">
-    <div class="shop-hero">
-      <p class="shop-hero-kicker">Catalog · 目录</p>
-      <h1>Lhasa Sa 宠物馆</h1>
-      <p>主粮零食、清洁护理、智能用品与出行装备。结算页可对接<strong>空中云汇</strong>托管收银台（需在 <code>js/payment-config.js</code> 填写 Intent 地址与 Client ID）。</p>
+    <div class="shop-hero shop-hero--split">
+      <div class="shop-hero-main">
+        <p class="shop-hero-kicker">Catalog · 目录</p>
+        <h1>Lhasa Sa 宠物馆</h1>
+        <p>主粮零食、清洁护理、智能用品与出行装备。结算页可对接<strong>空中云汇</strong>托管收银台（需在 <code>js/payment-config.js</code> 填写 Intent 地址与 Client ID）。</p>
+      </div>
+      <aside class="shop-hero-side" aria-label="导购提示">
+        <h2>本页导购提示</h2>
+        <ul>
+          <li>优先查看带「热销/推荐」标记商品</li>
+          <li>按类目筛选后，先看规格与价格区间</li>
+          <li>可先加入购物车再集中比价结算</li>
+        </ul>
+      </aside>
     </div>
 
     <div class="shop-toolbar">
@@ -43,6 +53,45 @@
         购物车 <span class="count" id="cart-count">0</span>
       </button>
     </div>
+
+    <section class="shop-service-cards" aria-label="商城服务说明">
+      <article class="shop-service-card">
+        <h3>热卖优先</h3>
+        <p>默认优先展示高分与高复购潜力商品。</p>
+      </article>
+      <article class="shop-service-card">
+        <h3>参数导购</h3>
+        <p>重点展示容量、尺寸、适用对象等关键信息。</p>
+      </article>
+      <article class="shop-service-card">
+        <h3>快速结算</h3>
+        <p>购物车抽屉 + 结算页两步完成下单流程。</p>
+      </article>
+    </section>
+
+    <section class="shop-service-cards" aria-label="留言系统测试入口">
+      <article class="shop-service-card">
+        <h3>留言测试</h3>
+        <p>用于测试 <code>/api/guestbook</code> 提交流程与通知推送。</p>
+        <p style="margin-top:0.75rem">
+          <a class="btn btn-ghost btn--lux-ghost" href="/guestbook.html">打开留言页</a>
+        </p>
+      </article>
+      <article class="shop-service-card">
+        <h3>订单后台</h3>
+        <p>查看订单列表（需要配置 Supabase + <code>ORDERS_ADMIN_TOKEN</code>）。</p>
+        <p style="margin-top:0.75rem">
+          <a class="btn btn-ghost btn--lux-ghost" href="/admin/orders.html">打开订单后台</a>
+        </p>
+      </article>
+      <article class="shop-service-card">
+        <h3>支付链路</h3>
+        <p>如需真实支付，请先配置 Airwallex（见结算页说明）。</p>
+        <p style="margin-top:0.75rem">
+          <a class="btn btn-ghost btn--lux-ghost" href="/shop/checkout.html">打开结算页</a>
+        </p>
+      </article>
+    </section>
 
     <div id="product-grid" class="product-grid" aria-live="polite"></div>
   </main>

@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=8" />
+  <link rel="stylesheet" href="/css/styles.css?v=9" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Cpath d='M8 20c4-8 12-8 16 0' fill='none' stroke='%23faf9f7' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
 <body class="page-home">
@@ -38,21 +38,57 @@
     </nav>
   </header>
 
+  <section class="announcement-bar" aria-label="站点公告">
+    <p>LA 站点视觉升级中 · 新版目录与导购体验已上线</p>
+  </section>
+
   <main id="top">
     <section class="hero hero--lux" aria-labelledby="hero-heading">
-      <div class="hero--lux-inner">
-        <p class="hero-kicker">Pet atelier · 宠物馆</p>
-        <h1 id="hero-heading" class="hero-title-lux">
-          <span class="hero-title-lux__zh">为主人与伴侣</span>
-          <span class="hero-title-lux__en">Built to last. Chosen with care.</span>
-        </h1>
-        <p class="hero-lead hero-lead--lux">
-          主粮、清洁、智能喂养与出行装备 —— 少而精的货架，可验证的质感。结算支持<strong>空中云汇</strong>安全收银台。
-        </p>
-        <p class="hero-actions hero-actions--lux">
-          <a class="btn btn-primary btn--lux" href="/shop/">进入商店</a>
-          <a class="btn btn-ghost btn--lux-ghost" href="#collection">浏览精选</a>
-        </p>
+      <div class="hero--lux-split">
+        <div class="hero--lux-inner">
+          <p class="hero-kicker">Pet atelier · 宠物馆</p>
+          <h1 id="hero-heading" class="hero-title-lux">
+            <span class="hero-title-lux__zh">为主人与伴侣</span>
+            <span class="hero-title-lux__en">Built to last. Chosen with care.</span>
+          </h1>
+          <p class="hero-lead hero-lead--lux">
+            主粮、清洁、智能喂养与出行装备 —— 少而精的货架，可验证的质感。结算支持<strong>空中云汇</strong>安全收银台。
+          </p>
+          <p class="hero-actions hero-actions--lux">
+            <a class="btn btn-primary btn--lux" href="/shop/">进入商店</a>
+            <a class="btn btn-ghost btn--lux-ghost" href="#collection">浏览精选</a>
+          </p>
+        </div>
+        <aside class="hero-visual-card" aria-label="站点指标">
+          <p class="hero-visual-kicker">LA · Snapshot</p>
+          <ul class="hero-metrics">
+            <li><strong>50+</strong><span>优选商品池</span></li>
+            <li><strong>4</strong><span>核心类目</span></li>
+            <li><strong>24h</strong><span>运营更新节奏</span></li>
+          </ul>
+          <p class="hero-visual-note">以真实参数和长期复购为核心的宠物用品选品站。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="服务承诺">
+      <div class="trust-strip-inner">
+        <article class="trust-item">
+          <h3>精选上架</h3>
+          <p>聚焦高复购宠物用品，不做冗余铺货。</p>
+        </article>
+        <article class="trust-item">
+          <h3>真实参数</h3>
+          <p>规格、容量、使用场景优先展示，减少决策成本。</p>
+        </article>
+        <article class="trust-item">
+          <h3>稳定支付</h3>
+          <p>结算链路支持空中云汇托管收银台。</p>
+        </article>
+        <article class="trust-item">
+          <h3>持续迭代</h3>
+          <p>基于留言和运营数据持续优化选品与版式。</p>
+        </article>
       </div>
     </section>
 
@@ -137,6 +173,13 @@
       <div class="section-band-inner">
         <p class="section-band-text">每一件上架，都经过「是否愿意给自己的宠物用」这一问。</p>
         <a class="btn btn-primary btn--lux" href="/shop/">选购精选</a>
+      </div>
+    </section>
+
+    <section class="section section-band" aria-hidden="false">
+      <div class="section-band-inner">
+        <p class="section-band-text">留言系统测试区：提交一条留言，我们会在后台收到通知（配置 Webhook 后）。</p>
+        <a class="btn btn-ghost btn--lux-ghost" href="/guestbook.html">去留言测试</a>
       </div>
     </section>
 

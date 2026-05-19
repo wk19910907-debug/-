@@ -19,6 +19,17 @@
     return "¥" + (Math.round(n * 100) / 100).toFixed(0);
   }
 
+  function imageFallback(p) {
+    var keyword = "pet";
+    var source = (p.name || "") + " " + (p.category || "");
+    if (/猫砂|厕所/.test(source)) keyword = "cat litter box";
+    else if (/主粮|猫粮|犬粮/.test(source)) keyword = "pet food";
+    else if (/饮水/.test(source)) keyword = "pet water fountain";
+    else if (/出行|航空箱/.test(source)) keyword = "pet carrier";
+    else if (/玩具|猫抓板/.test(source)) keyword = "cat toy";
+    return "https://source.unsplash.com/640x480/?" + encodeURIComponent(keyword);
+  }
+
   function syncCartUi() {
     var cart = window.LTS.loadCart();
     var c = window.LTS.cartCount(cart);
@@ -81,6 +92,22 @@
     }
   }
 
+  function buildSpecChips(p) {
+    var chips = [];
+    var specs = p.specs || {};
+    var a = Array.isArray(specs.size_or_capacity) ? specs.size_or_capacity : [];
+    var b = Array.isArray(specs.packaging_count) ? specs.packaging_count : [];
+    a.concat(b).forEach(function (x) {
+      var t = String(x || "").trim();
+      if (t && chips.indexOf(t) === -1) chips.push(t);
+    });
+    if (!chips.length && p.specs_text) {
+      var txt = String(p.specs_text).trim();
+      if (txt) chips.push(txt.slice(0, 22));
+    }
+    return chips.slice(0, 3);
+  }
+
   function renderProducts() {
     var list =
       activeCat === "全部"
@@ -95,6 +122,23 @@
         var badge = p.badge
           ? '<span class="product-badge">' + escapeHtml(p.badge) + "</span>"
           : "";
+        var sourceLink = p.product_url
+          ? '<a class="source-link" href="' +
+            escapeHtml(p.product_url) +
+            '" target="_blank" rel="noopener noreferrer">来源</a>'
+          : "";
+        var image = p.image_url || p.processed_image_path || p.image || imageFallback(p);
+        var fallbackSrc = imageFallback(p);
+        var specChips = buildSpecChips(p);
+        var specHtml = specChips.length
+          ? '<div class="product-specs">' +
+            specChips
+              .map(function (c) {
+                return '<span class="spec-chip">' + escapeHtml(c) + "</span>";
+              })
+              .join("") +
+            "</div>"
+          : "";
         return (
           '<article class="product-card" data-id="' +
           escapeHtml(p.id) +
@@ -105,27 +149,36 @@
           ((hue + 40) % 360) +
           ',5%,87%) 100%)">' +
           badge +
-          '<span aria-hidden="true">' +
-          escapeHtml(p.name.slice(0, 1)) +
-          "</span>" +
+          '<img class="product-image" loading="lazy" src="' +
+          escapeHtml(image) +
+          '" data-fallback="' +
+          escapeHtml(fallbackSrc) +
+          '" onerror="if(this.dataset.fallback){this.onerror=null;this.src=this.dataset.fallback;}" alt="' +
+          escapeHtml(p.name) +
+          '">' +
           "</div>" +
           '<div class="product-body">' +
           '<span class="product-cat">' +
           escapeHtml(p.category) +
+          (p.platform ? " · " + escapeHtml(p.platform) : "") +
           "</span>" +
           "<h3 class=\"product-name\">" +
           escapeHtml(p.name) +
           "</h3>" +
+          specHtml +
           '<p class="product-sub">' +
           escapeHtml(p.subtitle || "") +
           "</p>" +
           '<div class="product-row">' +
           '<span class="product-price">' +
-          money(p.price) +
+          money(p.price_cny || p.price) +
           "<small>起</small></span>" +
+          '<div class="product-actions">' +
+          sourceLink +
           '<button type="button" class="add-btn" data-add="' +
           escapeHtml(p.id) +
           '">加入购物车</button>' +
+          "</div>" +
           "</div>" +
           "</div>" +
           "</article>"
@@ -160,7 +213,13 @@
       return r.json();
     })
     .then(function (data) {
-      products = data;
+      products = (data || []).map(function (p) {
+        var price = Number(p.price_cny || p.price || 0);
+        return Object.assign({}, p, { price: price, price_cny: price });
+      });
+      products.sort(function (a, b) {
+        return (Number(b.opportunity_score) || 0) - (Number(a.opportunity_score) || 0);
+      });
       buildFilters();
       renderProducts();
       syncCartUi();

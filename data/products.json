@@ -1,442 +1,165 @@
 [
   {
-    "id": "pet-freeze-dried-chicken",
-    "name": "冻干鸡肉粒 · 猫狗通用",
-    "category": "主粮零食",
-    "price": 68,
-    "subtitle": "500g 锁鲜装 · 无谷配方",
-    "badge": "热销"
+    "id": "pet-01-09d06296",
+    "name": "喵先生 一号航空箱 咖色",
+    "category": "出行",
+    "platform": "京东",
+    "price": 89.0,
+    "price_cny": 89.0,
+    "subtitle": "建议价带: 89.0-106.8 · 预估月销: 209 · low_competition, low_risk, good_price_band · 机会分 87.4",
+    "badge": "热销",
+    "product_url": "https://item.jd.com/67613051140.html",
+    "image_url": "https://m.360buyimg.com/babel/jfs/t20280325/274965/21/10397/46026/67e3802fF58536807/85fed84299cb141d.png",
+    "opportunity_score": 87.4,
+    "source_urls": [
+      "https://item.jd.com/67613051140.html"
+    ]
   },
   {
-    "id": "pet-salmon-kitten",
-    "name": "幼猫三文鱼奶糕粮",
-    "category": "主粮零食",
-    "price": 128,
-    "subtitle": "2kg · DHA 添加",
-    "badge": "新品"
+    "id": "pet-02-c7ef7d33",
+    "name": "霍曼三代宠物饮水机 Pro（列表页）",
+    "category": "饮水",
+    "platform": "淘宝",
+    "price": 99.0,
+    "price_cny": 99.0,
+    "subtitle": "建议价带: 99.0-118.8 · 预估月销: 204 · low_competition, low_risk, good_price_band · 机会分 86.0",
+    "badge": "热销",
+    "product_url": "https://www.taobao.com/list/item/wap/694535835007.htm",
+    "image_url": "https://gw.alicdn.com/imgextra/i1/O1CN01frdmVR1MsT6ck7WNX_!!6000000001490-2-tps-112-112.png",
+    "opportunity_score": 86.0,
+    "source_urls": [
+      "https://www.taobao.com/list/item/wap/694535835007.htm",
+      "https://mgoods.taobao.com/t/chongwuzhinengyinshuiji_13197/6b2078072d5dda1c0e11d2281c21b4da.html"
+    ]
   },
   {
-    "id": "pet-dental-stick",
-    "name": "洁齿骨 · 中小型犬",
-    "category": "主粮零食",
-    "price": 45,
-    "subtitle": "30 支装 · 鸡肉味",
-    "badge": null
+    "id": "pet-03-23084b74",
+    "name": "玲珑猫大容量循环饮水机",
+    "category": "饮水",
+    "platform": "淘宝",
+    "price": 72.0,
+    "price_cny": 72.0,
+    "subtitle": "建议价带: 72.0-86.4 · 预估月销: 235 · low_competition, low_risk · 机会分 85.5",
+    "badge": "热销",
+    "product_url": "https://www.taobao.com/list/item/584460731585.htm",
+    "image_url": "https://source.unsplash.com/640x480/?pet,water,fountain",
+    "opportunity_score": 85.5,
+    "source_urls": [
+      "https://www.taobao.com/list/item/584460731585.htm"
+    ]
   },
   {
-    "id": "pet-self-clean-litter",
-    "name": "豆腐猫砂 · 低尘",
-    "category": "日用耗材",
-    "price": 39,
-    "subtitle": "6L × 4 袋",
-    "badge": null
+    "id": "pet-04-15d58eda",
+    "name": "全封闭猫砂盆（淘宝列表款）",
+    "category": "猫砂/厕所",
+    "platform": "淘宝",
+    "price": 128.0,
+    "price_cny": 128.0,
+    "subtitle": "建议价带: 128.0-153.6 · 预估月销: 121 · low_competition, low_risk, good_price_band · 机会分 84.4",
+    "badge": "推荐",
+    "product_url": "https://www.taobao.com/list/item/753437582982.htm",
+    "image_url": "https://gw.alicdn.com/imgextra/i1/O1CN01frdmVR1MsT6ck7WNX_!!6000000001490-2-tps-112-112.png",
+    "opportunity_score": 84.4,
+    "source_urls": [
+      "https://www.taobao.com/list/item/753437582982.htm",
+      "https://mgoods.taobao.com/t/maoshapen_13619/c912ab5317e7cbc52bcbacdf6a4f452e.html"
+    ]
   },
   {
-    "id": "pet-carrier-airline",
-    "name": "航空箱 · 中型犬/猫",
-    "category": "出行装备",
-    "price": 268,
-    "subtitle": "符合多数航司托运尺寸",
-    "badge": null
+    "id": "pet-05-47558b77",
+    "name": "嘉际便携宠物航空箱 48*30*33cm",
+    "category": "出行",
+    "platform": "京东",
+    "price": 158.0,
+    "price_cny": 158.0,
+    "subtitle": "建议价带: 158.0-189.6 · 预估月销: 157 · low_competition, low_risk · 机会分 84.1",
+    "badge": "推荐",
+    "product_url": "https://item.jd.com/10193196646935.html",
+    "image_url": "https://m.360buyimg.com/babel/jfs/t20280325/274965/21/10397/46026/67e3802fF58536807/85fed84299cb141d.png",
+    "opportunity_score": 84.1,
+    "source_urls": [
+      "https://item.jd.com/10193196646935.html"
+    ]
   },
   {
-    "id": "pet-auto-feeder",
-    "name": "智能喂食器 Wi‑Fi",
-    "category": "智能用品",
-    "price": 399,
-    "subtitle": "定时定量 · App 远程",
-    "badge": "推荐"
+    "id": "pet-06-2c65779e",
+    "name": "京七成猫专用粮 海洋鱼 5斤",
+    "category": "主粮",
+    "platform": "京东",
+    "price": 39.9,
+    "price_cny": 39.9,
+    "subtitle": "建议价带: 39.9-47.9 · 预估月销: 182 · low_competition, low_risk · 机会分 82.3",
+    "badge": "推荐",
+    "product_url": "https://item.jd.com/10207757195840.html",
+    "image_url": "https://m.360buyimg.com/babel/jfs/t20280325/274965/21/10397/46026/67e3802fF58536807/85fed84299cb141d.png",
+    "opportunity_score": 82.3,
+    "source_urls": [
+      "https://item.jd.com/10207757195840.html"
+    ]
   },
   {
-    "id": "pet-water-fountain",
-    "name": "循环饮水机 · 静音泵",
-    "category": "智能用品",
-    "price": 158,
-    "subtitle": "2.5L · 滤芯可换",
-    "badge": null
+    "id": "pet-07-748d6a04",
+    "name": "PAPER PARK 瓦楞纸猫抓板",
+    "category": "玩具",
+    "platform": "淘宝",
+    "price": 49.0,
+    "price_cny": 49.0,
+    "subtitle": "建议价带: 49.0-58.8 · 预估月销: 182 · low_competition, low_risk · 机会分 82.3",
+    "badge": "推荐",
+    "product_url": "https://www.taobao.com/list/item/694879830235.htm",
+    "image_url": "https://source.unsplash.com/640x480/?cat,toy",
+    "opportunity_score": 82.3,
+    "source_urls": [
+      "https://www.taobao.com/list/item/694879830235.htm"
+    ]
   },
   {
-    "id": "pet-shampoo-sensitive",
-    "name": "低敏香波 · 犬用",
-    "category": "清洁美容",
-    "price": 72,
-    "subtitle": "500ml · 燕麦舒缓",
-    "badge": null
+    "id": "pet-08-24d03a53",
+    "name": "小佩不锈钢循环饮水机",
+    "category": "饮水",
+    "platform": "淘宝",
+    "price": 169.9,
+    "price_cny": 169.9,
+    "subtitle": "建议价带: 169.9-203.9 · 预估月销: 136 · low_competition, low_risk · 机会分 81.1",
+    "badge": "推荐",
+    "product_url": "https://www.taobao.com/list/item/536217498853.htm",
+    "image_url": "https://source.unsplash.com/640x480/?pet,water,fountain",
+    "opportunity_score": 81.1,
+    "source_urls": [
+      "https://www.taobao.com/list/item/536217498853.htm",
+      "https://www.taobao.com/list/item/682328821034.htm"
+    ]
   },
   {
-    "id": "pet-leash-set",
-    "name": "防爆冲胸背带套装",
-    "category": "出行装备",
-    "price": 118,
-    "subtitle": "反光条 · M/L 可选",
-    "badge": null
+    "id": "pet-09-dda723cb",
+    "name": "瓦楞纸猫抓板磨爪器",
+    "category": "玩具",
+    "platform": "淘宝",
+    "price": 15.0,
+    "price_cny": 15.0,
+    "subtitle": "建议价带: 15.0-18.0 · 预估月销: 182 · low_competition, low_risk · 机会分 76.7",
+    "badge": null,
+    "product_url": "https://www.taobao.com/list/item/625029265468.htm",
+    "image_url": "https://source.unsplash.com/640x480/?cat,toy",
+    "opportunity_score": 76.7,
+    "source_urls": [
+      "https://www.taobao.com/list/item/625029265468.htm"
+    ]
   },
   {
-    "id": "pet-toy-feather",
-    "name": "逗猫棒替换头礼盒",
-    "category": "玩具训练",
-    "price": 29,
-    "subtitle": "8 支装",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-1",
-    "name": "全价成猫粮·鲜鸡配方",
-    "category": "主粮零食",
-    "price": 89,
-    "subtitle": "2kg·无谷",
-    "badge": "热销"
-  },
-  {
-    "id": "pet-sku-2",
-    "name": "全价幼犬粮·羊肉糙米",
-    "category": "主粮零食",
-    "price": 76,
-    "subtitle": "1.5kg",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-3",
-    "name": "冻干双拼猫粮",
-    "category": "主粮零食",
-    "price": 58,
-    "subtitle": "500g",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-4",
-    "name": "主食猫罐头·混合口味",
-    "category": "主粮零食",
-    "price": 96,
-    "subtitle": "85g×12",
-    "badge": "新品"
-  },
-  {
-    "id": "pet-sku-5",
-    "name": "小型犬软颗粒粮",
-    "category": "主粮零食",
-    "price": 118,
-    "subtitle": "3kg",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-6",
-    "name": "宠物羊奶粉",
-    "category": "主粮零食",
-    "price": 65,
-    "subtitle": "400g",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-7",
-    "name": "益生菌肠胃宝",
-    "category": "医疗保健",
-    "price": 49,
-    "subtitle": "30袋",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-8",
-    "name": "体内外驱虫滴剂·犬用",
-    "category": "医疗保健",
-    "price": 68,
-    "subtitle": "单支",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-9",
-    "name": "体内外驱虫滴剂·猫用",
-    "category": "医疗保健",
-    "price": 62,
-    "subtitle": "单支",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-10",
-    "name": "宠物维生素软嚼粒",
-    "category": "医疗保健",
-    "price": 55,
-    "subtitle": "200g",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-11",
-    "name": "关节舒缓软骨素",
-    "category": "医疗保健",
-    "price": 128,
-    "subtitle": "120粒",
-    "badge": "推荐"
-  },
-  {
-    "id": "pet-sku-12",
-    "name": "低敏洗毛液·猫用",
-    "category": "清洁美容",
-    "price": 72,
-    "subtitle": "400ml",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-13",
-    "name": "犬用燕麦香波",
-    "category": "清洁美容",
-    "price": 69,
-    "subtitle": "500ml",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-14",
-    "name": "宠物湿巾·无香",
-    "category": "清洁美容",
-    "price": 35,
-    "subtitle": "80抽×3",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-15",
-    "name": "指甲剪套装",
-    "category": "清洁美容",
-    "price": 42,
-    "subtitle": "不锈钢",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-16",
-    "name": "宠物电推剪",
-    "category": "清洁美容",
-    "price": 158,
-    "subtitle": "低噪",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-17",
-    "name": "豆腐猫砂·绿茶",
-    "category": "日用耗材",
-    "price": 72,
-    "subtitle": "6L×2",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-18",
-    "name": "膨润土猫砂",
-    "category": "日用耗材",
-    "price": 48,
-    "subtitle": "10kg",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-19",
-    "name": "尿垫·加厚",
-    "category": "日用耗材",
-    "price": 88,
-    "subtitle": "M码100片",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-20",
-    "name": "智能饮水机·UV款",
-    "category": "智能用品",
-    "price": 228,
-    "subtitle": "3L",
-    "badge": "新品"
-  },
-  {
-    "id": "pet-sku-21",
-    "name": "自动猫砂盆·入门款",
-    "category": "智能用品",
-    "price": 1899,
-    "subtitle": "含垫料试用",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-22",
-    "name": "宠物摄像头·云台",
-    "category": "智能用品",
-    "price": 199,
-    "subtitle": "1080P",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-23",
-    "name": "车载宠物安全带",
-    "category": "出行装备",
-    "price": 39,
-    "subtitle": "通用",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-24",
-    "name": "折叠宠物围栏",
-    "category": "出行装备",
-    "price": 168,
-    "subtitle": "六片",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-25",
-    "name": "猫爬架·中型",
-    "category": "日用耗材",
-    "price": 328,
-    "subtitle": "剑麻柱",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-26",
-    "name": "漏食球·耐咬",
-    "category": "玩具训练",
-    "price": 45,
-    "subtitle": "L",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-27",
-    "name": "飞盘·软胶",
-    "category": "玩具训练",
-    "price": 28,
-    "subtitle": "犬用",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-28",
-    "name": "逗猫激光笔套装",
-    "category": "玩具训练",
-    "price": 32,
-    "subtitle": "充电",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-29",
-    "name": "嗅闻垫·益智",
-    "category": "玩具训练",
-    "price": 98,
-    "subtitle": "可机洗",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-30",
-    "name": "拾便袋·降解",
-    "category": "日用耗材",
-    "price": 22,
-    "subtitle": "6卷",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-31",
-    "name": "宠物粘毛滚筒",
-    "category": "日用耗材",
-    "price": 26,
-    "subtitle": "替换芯×5",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-32",
-    "name": "鱼缸外置过滤桶",
-    "category": "水族小宠",
-    "price": 268,
-    "subtitle": "小型",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-33",
-    "name": "观赏鱼粮·热带鱼",
-    "category": "主粮零食",
-    "price": 42,
-    "subtitle": "500ml",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-34",
-    "name": "兔粮·高纤维",
-    "category": "主粮零食",
-    "price": 56,
-    "subtitle": "2.5kg",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-35",
-    "name": "仓鼠浴沙",
-    "category": "清洁美容",
-    "price": 29,
-    "subtitle": "2kg",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-36",
-    "name": "宠物烘干箱·家用",
-    "category": "智能用品",
-    "price": 1299,
-    "subtitle": "猫咪小型犬",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-37",
-    "name": "宠物急救包",
-    "category": "医疗保健",
-    "price": 119,
-    "subtitle": "基础款",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-38",
-    "name": "伊丽莎白圈·可调",
-    "category": "医疗保健",
-    "price": 25,
-    "subtitle": "猫狗通用",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-39",
-    "name": "宠物冰垫·夏季",
-    "category": "日用耗材",
-    "price": 48,
-    "subtitle": "M",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-40",
-    "name": "训练响片+零食袋",
-    "category": "主粮零食",
-    "price": 36,
-    "subtitle": "套装",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-41",
-    "name": "猫抓板·瓦楞纸隧道",
-    "category": "玩具训练",
-    "price": 79,
-    "subtitle": "大号",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-42",
-    "name": "犬用雨衣·反光",
-    "category": "出行装备",
-    "price": 88,
-    "subtitle": "XL",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-43",
-    "name": "宠物楼梯·海绵",
-    "category": "出行装备",
-    "price": 156,
-    "subtitle": "三层",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-44",
-    "name": "离乳期奶糕罐头",
-    "category": "主粮零食",
-    "price": 54,
-    "subtitle": "猫用 · 6 罐",
-    "badge": null
-  },
-  {
-    "id": "pet-sku-45",
-    "name": "处方粮咨询预约金（联系客服）",
-    "category": "主粮零食",
-    "price": 1,
-    "subtitle": "非发货商品 · 可抵扣正式订单",
-    "badge": "咨询"
+    "id": "pet-10-b00055f1",
+    "name": "渴望原味鸡肉全阶段猫粮 5.4kg",
+    "category": "主粮",
+    "platform": "京东",
+    "price": 599.0,
+    "price_cny": 599.0,
+    "subtitle": "建议价带: 599.0-718.8 · 预估月销: 121 · low_competition · 机会分 72.9",
+    "badge": null,
+    "product_url": "https://item.jd.com/10172878595247.html",
+    "image_url": "https://m.360buyimg.com/babel/jfs/t20280325/274965/21/10397/46026/67e3802fF58536807/85fed84299cb141d.png",
+    "opportunity_score": 72.9,
+    "source_urls": [
+      "https://item.jd.com/10172878595247.html"
+    ]
   }
 ]

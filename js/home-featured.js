@@ -19,6 +19,16 @@
     return h;
   }
 
+  function imageFallback(p) {
+    var keyword = "pet supplies";
+    var source = (p.name || "") + " " + (p.category || "");
+    if (/猫砂|厕所/.test(source)) keyword = "cat litter";
+    else if (/主粮|猫粮/.test(source)) keyword = "cat food";
+    else if (/饮水/.test(source)) keyword = "pet fountain";
+    else if (/出行|航空箱/.test(source)) keyword = "pet carrier";
+    return "https://source.unsplash.com/640x480/?" + encodeURIComponent(keyword);
+  }
+
   function cardHtml(p, compact) {
     var hu = hueFromId(p.id || "");
     var h2 = (hu + 28) % 360;
@@ -31,6 +41,12 @@
     var badge = p.badge
       ? '<span class="home-spot-badge">' + escapeHtml(p.badge) + "</span>"
       : "";
+    var imgUrl = p.image_url || p.processed_image_path || imageFallback(p);
+    if (String(imgUrl).indexOf("dummyimage.com") !== -1) imgUrl = imageFallback(p);
+    var imgBlock =
+      '<img class="home-spot-img" loading="lazy" src="' +
+      escapeHtml(imgUrl) +
+      '" alt="">';
     var initial =
       '<span class="home-spot-initial" aria-hidden="true">' +
       escapeHtml((p.name || "?").slice(0, 1)) +
@@ -38,6 +54,7 @@
     var visual =
       '<div class="home-spot-visual" style="background:' + grad + '">' +
       badge +
+      imgBlock +
       initial +
       "</div>";
     var body =
@@ -67,6 +84,9 @@
         root.innerHTML = '<p class="home-featured-fallback">精选载入中…</p>';
         return;
       }
+      products = products.slice().sort(function (a, b) {
+        return (Number(b.opportunity_score) || 0) - (Number(a.opportunity_score) || 0);
+      });
       var withBadge = products.filter(function (p) {
         return p.badge;
       });
