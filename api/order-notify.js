@@ -135,7 +135,7 @@ function withFeishuSign(payload, secret) {
 async function postJson(url, payload, provider = "generic") {
   const r = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json; charset=utf-8" },
     body: JSON.stringify(payload),
   });
   let txt = "";
@@ -262,7 +262,11 @@ async function forwardProcurementWebhook(order, errors) {
     headers["X-LTS-Signature"] = `sha256=${sig}`;
   }
   try {
-    const r = await fetch(url, { method: "POST", headers, body: raw });
+    const r = await fetch(url, {
+      method: "POST",
+      headers: { ...headers, "Content-Type": "application/json; charset=utf-8" },
+      body: raw,
+    });
     if (!r.ok) {
       errors.push(`procurement_webhook_http_${r.status}`);
       return { skipped: false, ok: false };

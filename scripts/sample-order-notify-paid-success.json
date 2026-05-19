@@ -1,23 +1,23 @@
 {
   "order": {
-    "order_id": "TEST-PAID-001",
+    "order_id": "TEST-PAID-PLACEHOLDER",
     "status": "paid_success",
     "source": "sample-order-notify-paid-success.json",
     "name": "联调已支付",
     "phone": "13800138000",
-    "address": "上海市（示例）",
-    "note": "用于触发 n8n FEISHU_ORDER_MIRROR_URL",
+    "address": "上海市浦东新区（示例地址）",
+    "note": "UTF-8 中文验收单",
     "total": 178,
     "items": [
       {
-        "id": "pet-01-demo",
-        "name": "示例宠物 SKU",
+        "id": "pet-01-09d06296",
+        "name": "喵先生 一号航空箱 咖色",
         "qty": 2,
         "price": 89,
         "supply_snapshot": {
-          "platform": "1688",
-          "listing_url": "https://detail.1688.com/offer/example.html",
-          "offer_id": "0000000000",
+          "platform": "京东",
+          "listing_url": "https://item.jd.com/67613051140.html",
+          "source_urls": ["https://item.jd.com/67613051140.html"],
           "mapped_at": "2026-05-19T00:00:00Z",
           "sealed_at": "2026-05-19T12:00:00.000Z"
         }
