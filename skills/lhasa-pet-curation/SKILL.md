@@ -33,6 +33,27 @@ description: >-
 - `subtitle`：规格/卖点一行
 - `badge`：字符串或 `null`（如「热销」「新品」）
 
+### 可选：`supply`（多平台货源追溯 / 采购中枢）
+
+用于独立站下单后在飞书订单通知里带出「源头」摘要，并在结账 JSON 里写入 `supply_snapshot`（见 `js/checkout-page.js`、`api/order-notify.js`）。
+
+- 若在 `selection.json` 里提供 `supply` 对象，导入脚本会原样合并进 `data/products.json`（并补 `mapped_at`）。
+- 未提供时，脚本会根据 `platform` + `product_url` + `source_urls` **推断**一条 `supply`（`provenance: inferred_from_selection_row`）。
+
+推荐字段（按需扩展，键名自定但建议统一）：
+
+| 键 | 说明 |
+|----|------|
+| `platform` | 如 `1688`、`淘宝`、`京东` |
+| `listing_url` | 主货源商品页 |
+| `source_urls` | 证据链/多平台同款链接数组 |
+| `offer_id` / `spec_id` | 1688 等开放平台的商品、规格 ID（有则填） |
+| `seller_id` / `seller_name` | 卖家标识，便于议价对接 |
+| `cost_ref_cny` | 参考成本价（元），下单前算毛利 |
+| `mapped_at` | UTC 时间串；脚本可自动补 |
+
+议价与自动下单仍走后续服务（OpenClaw / n8n / ERP）；本站只负责**结构化留痕**。
+
 ## 推荐工作流（可写进 Cron + 对话）
 
 1. **情报**：Web Search 本周「宠物 零食 趋势」「猫砂 新品」等（遵守站点 robots 与法律）。

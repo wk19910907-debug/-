@@ -21,8 +21,40 @@
     }, 0);
   }
 
+  var catalogById = {};
+
+  function enrichCartSupply(cart) {
+    if (!cart || !Array.isArray(cart.items) || !window.LTS || !window.LTS.supplyForLine) return cart;
+    var changed = false;
+    cart.items.forEach(function (it) {
+      if (it.supply && typeof it.supply === "object") return;
+      var p = catalogById[it.id];
+      if (!p) return;
+      it.supply = window.LTS.supplyForLine(p);
+      changed = true;
+    });
+    if (changed && window.LTS.saveCart) window.LTS.saveCart(cart);
+    return cart;
+  }
+
+  function loadCatalog() {
+    return fetch("/data/products.json")
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (data) {
+        catalogById = {};
+        (data || []).forEach(function (p) {
+          if (p && p.id) catalogById[p.id] = p;
+        });
+      })
+      .catch(function () {
+        catalogById = {};
+      });
+  }
+
   function run() {
-    var cart = window.LTS.loadCart();
+    var cart = enrichCartSupply(window.LTS.loadCart());
     if (!cart.items.length) {
       window.location.replace("/shop/");
       return;
@@ -63,6 +95,78 @@
     return copyOrderText(body);
   }
 
+  function getNotifyState() {
+    try {
+      var raw = localStorage.getItem("lts_notify_sent_v1");
+      var parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function setNotifyState(state) {
+    try {
+      localStorage.setItem("lts_notify_sent_v1", JSON.stringify(state || {}));
+    } catch (e) {}
+  }
+
+  function notifyKey(order) {
+    return String(order.order_id || "-") + "::" + String(order.status || "created");
+  }
+
+  function buildOrderPayload(cart, fd, totalYuan, orderId, status) {
+    return {
+      order: {
+        order_id: orderId || "",
+        status: status || "created",
+        source: "checkout_page",
+        name: (fd.get("name") || "").toString().trim(),
+        phone: (fd.get("phone") || "").toString().trim(),
+        address: (fd.get("address") || "").toString().trim(),
+        note: (fd.get("note") || "").toString().trim(),
+        total: Number(totalYuan || 0),
+        items: (cart.items || []).map(function (it) {
+          var snap =
+            it.supply && typeof it.supply === "object"
+              ? Object.assign({}, it.supply, { sealed_at: new Date().toISOString() })
+              : null;
+          return {
+            id: it.id,
+            name: it.name,
+            qty: Number(it.qty || 0),
+            price: Number(it.price || 0),
+            supply_snapshot: snap,
+          };
+        }),
+      },
+    };
+  }
+
+  function notifyOrder(payload) {
+    var key = notifyKey(payload.order || {});
+    var state = getNotifyState();
+    if (state[key]) {
+      return Promise.resolve({ skipped: true });
+    }
+    return fetch("/api/order-notify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+      .then(function (res) {
+        if (res && res.ok) {
+          state[key] = Date.now();
+          setNotifyState(state);
+        }
+        return res;
+      })
+      .catch(function () {
+        // Do not block checkout flow if notify fails.
+        return null;
+      });
+  }
+
   function loadAirwallexSdk() {
     if (window.__lts_awx_sdk) return Promise.resolve(window.__lts_awx_sdk);
     var cfg = window.LTS_AIRWALLEX || {};
@@ -88,6 +192,10 @@
   function payWithAirwallex(cfg, cart, fd, totalYuan) {
     var minor = Math.max(1, Math.round(totalYuan * 100));
     var oid = "pet-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+    try {
+      var pendingOrder = buildOrderPayload(cart, fd, totalYuan, oid, "pending_payment");
+      localStorage.setItem("lts_pending_order_v1", JSON.stringify(pendingOrder.order));
+    } catch (e) {}
     var payload = {
       amount: minor,
       currency: (cfg.currency || "CNY").toUpperCase(),
@@ -149,10 +257,12 @@
       });
   }
 
+  loadCatalog().then(run);
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var cart = window.LTS.loadCart();
+      var cart = enrichCartSupply(window.LTS.loadCart());
       var fd = new FormData(form);
       var name = (fd.get("name") || "").toString().trim();
       var phone = (fd.get("phone") || "").toString().trim();
@@ -204,17 +314,35 @@
       };
 
       if (hasAwx) {
-        payWithAirwallex(cfg, cart, fd, totalYuan).catch(function (err) {
-          alert(
-            (err && err.message ? err.message : "支付发起失败") +
-              "\n\n将改为复制订单文本，你可联系人工客服；并确认：\n1) intentUrl 为公网 HTTPS；\n2) 另一站点已配置 CORS 白名单包含本店域名；\n3) 服务端 AIRWALLEX_* 与 CNY 金额逻辑正确。"
-          );
-          Promise.resolve(fallbackSubmit(cart, fd, body)).finally(done);
+        var preOrderPayload = buildOrderPayload(
+          cart,
+          fd,
+          totalYuan,
+          "pre-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+          "pending_payment"
+        );
+        notifyOrder(preOrderPayload).finally(function () {
+          payWithAirwallex(cfg, cart, fd, totalYuan).catch(function (err) {
+            alert(
+              (err && err.message ? err.message : "支付发起失败") +
+                "\n\n将改为复制订单文本，你可联系人工客服；并确认：\n1) intentUrl 为公网 HTTPS；\n2) 另一站点已配置 CORS 白名单包含本店域名；\n3) 服务端 AIRWALLEX_* 与 CNY 金额逻辑正确。"
+            );
+            Promise.resolve(fallbackSubmit(cart, fd, body)).finally(done);
+          });
         });
         return;
       }
 
-      fallbackSubmit(cart, fd, body).finally(done);
+      var offlinePayload = buildOrderPayload(
+        cart,
+        fd,
+        totalYuan,
+        "offline-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+        "created"
+      );
+      notifyOrder(offlinePayload).finally(function () {
+        fallbackSubmit(cart, fd, body).finally(done);
+      });
     });
 
     var cfg2 = window.LTS_AIRWALLEX || {};
@@ -229,5 +357,4 @@
     }
   }
 
-  run();
 })();

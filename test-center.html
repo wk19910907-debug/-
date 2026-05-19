@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="通知系统一键验收页 · Lhasa Sa 宠物馆" />
+  <title>系统验收页 · Lhasa Sa 宠物馆</title>
+  <link rel="stylesheet" href="/css/styles.css?v=8" />
+  <link rel="stylesheet" href="/css/shop.css?v=8" />
+</head>
+<body class="page-site">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header site-header--lux">
+    <a class="logo logo--lux" href="/">Lhasa Sa</a>
+    <nav id="site-nav" class="site-nav site-nav--lux" aria-label="主导航">
+      <a href="/shop/">商店</a>
+      <a href="/guestbook.html">留言</a>
+      <a href="/test-center.html" aria-current="page">系统验收</a>
+      <a href="/admin/orders.html">订单后台</a>
+    </nav>
+  </header>
+
+  <main id="main" class="checkout-layout">
+    <header class="page-intro-lux">
+      <p class="page-intro-lux__kicker">Ops · Acceptance</p>
+      <h1>通知系统验收页</h1>
+      <p class="checkout-lead">
+        用于快速验证留言通知、订单通知和订单后台链路是否正常。
+      </p>
+    </header>
+
+    <section class="checkout-card">
+      <h2>1) 留言通知测试</h2>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="gb-name">称呼</label>
+          <input id="gb-name" type="text" value="验收留言用户" maxlength="80" />
+        </div>
+        <div class="form-field">
+          <label for="gb-email">邮箱</label>
+          <input id="gb-email" type="email" value="acceptance@example.com" maxlength="120" />
+        </div>
+        <div class="form-field">
+          <label for="gb-msg">留言内容</label>
+          <textarea id="gb-msg" maxlength="2000">系统验收留言：请确认飞书已收到此条。</textarea>
+        </div>
+        <button id="send-guestbook" class="submit-order" type="button">发送测试留言</button>
+      </div>
+      <p id="guestbook-result" class="notice-box"></p>
+    </section>
+
+    <section class="checkout-card">
+      <h2>2) 订单通知测试</h2>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="order-name">收货人</label>
+          <input id="order-name" type="text" value="验收订单用户" />
+        </div>
+        <div class="form-field">
+          <label for="order-phone">手机号</label>
+          <input id="order-phone" type="text" value="13800000000" />
+        </div>
+        <div class="form-field">
+          <label for="order-note">备注</label>
+          <textarea id="order-note">系统验收订单：请确认飞书已收到此条。</textarea>
+        </div>
+        <button id="send-order" class="submit-order" type="button">发送测试订单</button>
+      </div>
+      <p id="order-result" class="notice-box"></p>
+    </section>
+
+    <section class="checkout-card">
+      <h2>3) 订单后台检查</h2>
+      <p class="checkout-lead" style="margin-bottom:1rem;">点击进入后台，建议按时间倒序查找刚刚生成的测试订单号。</p>
+      <a class="btn btn-ghost btn--lux-ghost" href="/admin/orders.html" target="_blank" rel="noopener">打开订单后台</a>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var gbBtn = document.getElementById("send-guestbook");
+      var odBtn = document.getElementById("send-order");
+      var gbResult = document.getElementById("guestbook-result");
+      var odResult = document.getElementById("order-result");
+
+      function setResult(el, text) {
+        if (el) el.textContent = text || "";
+      }
+
+      function toJsonSafe(r) {
+        return r.text().then(function (t) {
+          try {
+            return { ok: r.ok, data: JSON.parse(t) };
+          } catch (e) {
+            return { ok: r.ok, data: { raw: t } };
+          }
+        });
+      }
+
+      if (gbBtn) {
+        gbBtn.addEventListener("click", function () {
+          var payload = {
+            name: (document.getElementById("gb-name").value || "").trim(),
+            email: (document.getElementById("gb-email").value || "").trim(),
+            message: (document.getElementById("gb-msg").value || "").trim()
+          };
+          setResult(gbResult, "留言提交中...");
+          fetch("/api/guestbook", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          })
+            .then(toJsonSafe)
+            .then(function (x) {
+              setResult(gbResult, "留言返回: " + JSON.stringify(x.data));
+            })
+            .catch(function (e) {
+              setResult(gbResult, "留言请求失败: " + (e && e.message ? e.message : "unknown"));
+            });
+        });
+      }
+
+      if (odBtn) {
+        odBtn.addEventListener("click", function () {
+          var oid = "ACC-" + Date.now();
+          var payload = {
+            order: {
+              order_id: oid,
+              status: "created",
+              source: "test_center",
+              name: (document.getElementById("order-name").value || "").trim(),
+              phone: (document.getElementById("order-phone").value || "").trim(),
+              address: "验收地址",
+              note: (document.getElementById("order-note").value || "").trim(),
+              total: 88.8,
+              items: [
+                {
+                  id: "pet-test-center",
+                  name: "验收商品",
+                  qty: 1,
+                  price: 88.8,
+                  supply_snapshot: {
+                    platform: "test_center",
+                    listing_url: "https://example.com/product",
+                    mapped_at: new Date().toISOString(),
+                    provenance: "test_center",
+                    sealed_at: new Date().toISOString()
+                  }
+                }
+              ]
+            }
+          };
+          setResult(odResult, "订单提交中...");
+          fetch("/api/order-notify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          })
+            .then(toJsonSafe)
+            .then(function (x) {
+              setResult(odResult, "订单返回(" + oid + "): " + JSON.stringify(x.data));
+            })
+            .catch(function (e) {
+              setResult(odResult, "订单请求失败: " + (e && e.message ? e.message : "unknown"));
+            });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "order": {
+    "order_id": "TEST-SCRIPT-001",
+    "status": "created",
+    "source": "sample-order-notify.json",
+    "name": "联调测试",
+    "phone": "13800138000",
+    "address": "上海市浦东新区（示例）",
+    "note": "由 scripts/test-order-notify.ps1 提交",
+    "total": 178,
+    "items": [
+      {
+        "id": "pet-01-demo",
+        "name": "示例宠物 SKU",
+        "qty": 2,
+        "price": 89,
+        "supply_snapshot": {
+          "platform": "1688",
+          "listing_url": "https://detail.1688.com/offer/example.html",
+          "offer_id": "0000000000",
+          "spec_id": "0000000000",
+          "source_urls": ["https://detail.1688.com/offer/example.html"],
+          "mapped_at": "2026-05-19T00:00:00Z",
+          "provenance": "sample",
+          "sealed_at": "2026-05-19T12:00:00.000Z"
+        }
+      }
+    ]
+  }
+}

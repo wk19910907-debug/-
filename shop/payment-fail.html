@@ -75,5 +75,50 @@
     <p class="footer-copy">© <span id="y"></span> Lhasa Sa 宠物馆 · Tashi Delek</p>
   </footer>
   <script src="/js/main.js"></script>
+  <script>
+    (function () {
+      try {
+        function loadNotifyState() {
+          try {
+            var raw = localStorage.getItem("lts_notify_sent_v1");
+            var parsed = raw ? JSON.parse(raw) : {};
+            return parsed && typeof parsed === "object" ? parsed : {};
+          } catch (e) {
+            return {};
+          }
+        }
+        function saveNotifyState(state) {
+          try { localStorage.setItem("lts_notify_sent_v1", JSON.stringify(state || {})); } catch (e) {}
+        }
+        function notifyKey(order) {
+          return String(order.order_id || "-") + "::" + String(order.status || "created");
+        }
+
+        var pendingRaw = localStorage.getItem("lts_pending_order_v1");
+        if (!pendingRaw) return;
+        var pending = JSON.parse(pendingRaw);
+        pending.status = "payment_failed";
+        pending.source = "payment_fail_page";
+        var state = loadNotifyState();
+        var key = notifyKey(pending);
+        if (state[key]) {
+          localStorage.removeItem("lts_pending_order_v1");
+          return;
+        }
+        fetch("/api/order-notify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ order: pending }),
+        }).then(function (res) {
+          if (res && res.ok) {
+            state[key] = Date.now();
+            saveNotifyState(state);
+          }
+        }).finally(function () {
+          localStorage.removeItem("lts_pending_order_v1");
+        });
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>

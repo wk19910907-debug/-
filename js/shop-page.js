@@ -127,7 +127,12 @@
             escapeHtml(p.product_url) +
             '" target="_blank" rel="noopener noreferrer">来源</a>'
           : "";
-        var image = p.image_url || p.processed_image_path || p.image || imageFallback(p);
+        var image = p.image_url || p.image || imageFallback(p);
+        if (image && image.indexOf("/assets/products/") === 0) {
+          image = image;
+        } else if (p.processed_image_path && String(p.processed_image_path).indexOf("assets/") === 0) {
+          image = "/" + String(p.processed_image_path).replace(/^\/+/, "");
+        }
         var fallbackSrc = imageFallback(p);
         var specChips = buildSpecChips(p);
         var specHtml = specChips.length

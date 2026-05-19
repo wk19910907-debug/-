@@ -28,6 +28,38 @@
     }, 0);
   }
 
+  /** Default source trace when selection row had no explicit `supply` (see data/products.json). */
+  function defaultSupplyFromProduct(p) {
+    var urls = [];
+    var pu = String((p && p.product_url) || "").trim();
+    if (pu) urls.push(pu);
+    if (p && Array.isArray(p.source_urls)) {
+      p.source_urls.forEach(function (u) {
+        u = String(u || "").trim();
+        if (u && urls.indexOf(u) === -1) urls.push(u);
+      });
+    }
+    return {
+      platform: String((p && p.platform) || "").trim(),
+      listing_url: pu,
+      source_urls: urls,
+      mapped_at: new Date().toISOString(),
+      provenance: "inferred_from_catalog",
+    };
+  }
+
+  function supplyForLine(product) {
+    if (product && product.supply && typeof product.supply === "object") {
+      var s = {};
+      for (var k in product.supply) {
+        if (Object.prototype.hasOwnProperty.call(product.supply, k)) s[k] = product.supply[k];
+      }
+      s.cart_mapped_at = new Date().toISOString();
+      return s;
+    }
+    return defaultSupplyFromProduct(product);
+  }
+
   function addToCart(cart, product) {
     var found = cart.items.find(function (it) {
       return it.id === product.id;
@@ -39,6 +71,7 @@
         name: product.name,
         price: product.price,
         qty: 1,
+        supply: supplyForLine(product),
       });
     saveCart(cart);
   }
@@ -69,5 +102,7 @@
     addToCart: addToCart,
     setQty: setQty,
     visualHue: visualHue,
+    supplyForLine: supplyForLine,
+    defaultSupplyFromProduct: defaultSupplyFromProduct,
   };
 })();

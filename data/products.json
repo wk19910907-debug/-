@@ -13,7 +13,16 @@
     "opportunity_score": 87.4,
     "source_urls": [
       "https://item.jd.com/67613051140.html"
-    ]
+    ],
+    "supply": {
+      "platform": "京东",
+      "listing_url": "https://item.jd.com/67613051140.html",
+      "source_urls": [
+        "https://item.jd.com/67613051140.html"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-02-c7ef7d33",
@@ -30,7 +39,17 @@
     "source_urls": [
       "https://www.taobao.com/list/item/wap/694535835007.htm",
       "https://mgoods.taobao.com/t/chongwuzhinengyinshuiji_13197/6b2078072d5dda1c0e11d2281c21b4da.html"
-    ]
+    ],
+    "supply": {
+      "platform": "淘宝",
+      "listing_url": "https://www.taobao.com/list/item/wap/694535835007.htm",
+      "source_urls": [
+        "https://www.taobao.com/list/item/wap/694535835007.htm",
+        "https://mgoods.taobao.com/t/chongwuzhinengyinshuiji_13197/6b2078072d5dda1c0e11d2281c21b4da.html"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-03-23084b74",
@@ -42,11 +61,20 @@
     "subtitle": "建议价带: 72.0-86.4 · 预估月销: 235 · low_competition, low_risk · 机会分 85.5",
     "badge": "热销",
     "product_url": "https://www.taobao.com/list/item/584460731585.htm",
-    "image_url": "https://source.unsplash.com/640x480/?pet,water,fountain",
+    "image_url": "",
     "opportunity_score": 85.5,
     "source_urls": [
       "https://www.taobao.com/list/item/584460731585.htm"
-    ]
+    ],
+    "supply": {
+      "platform": "淘宝",
+      "listing_url": "https://www.taobao.com/list/item/584460731585.htm",
+      "source_urls": [
+        "https://www.taobao.com/list/item/584460731585.htm"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-04-15d58eda",
@@ -63,7 +91,17 @@
     "source_urls": [
       "https://www.taobao.com/list/item/753437582982.htm",
       "https://mgoods.taobao.com/t/maoshapen_13619/c912ab5317e7cbc52bcbacdf6a4f452e.html"
-    ]
+    ],
+    "supply": {
+      "platform": "淘宝",
+      "listing_url": "https://www.taobao.com/list/item/753437582982.htm",
+      "source_urls": [
+        "https://www.taobao.com/list/item/753437582982.htm",
+        "https://mgoods.taobao.com/t/maoshapen_13619/c912ab5317e7cbc52bcbacdf6a4f452e.html"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-05-47558b77",
@@ -79,7 +117,16 @@
     "opportunity_score": 84.1,
     "source_urls": [
       "https://item.jd.com/10193196646935.html"
-    ]
+    ],
+    "supply": {
+      "platform": "京东",
+      "listing_url": "https://item.jd.com/10193196646935.html",
+      "source_urls": [
+        "https://item.jd.com/10193196646935.html"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-06-2c65779e",
@@ -95,7 +142,16 @@
     "opportunity_score": 82.3,
     "source_urls": [
       "https://item.jd.com/10207757195840.html"
-    ]
+    ],
+    "supply": {
+      "platform": "京东",
+      "listing_url": "https://item.jd.com/10207757195840.html",
+      "source_urls": [
+        "https://item.jd.com/10207757195840.html"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-07-748d6a04",
@@ -107,11 +163,20 @@
     "subtitle": "建议价带: 49.0-58.8 · 预估月销: 182 · low_competition, low_risk · 机会分 82.3",
     "badge": "推荐",
     "product_url": "https://www.taobao.com/list/item/694879830235.htm",
-    "image_url": "https://source.unsplash.com/640x480/?cat,toy",
+    "image_url": "",
     "opportunity_score": 82.3,
     "source_urls": [
       "https://www.taobao.com/list/item/694879830235.htm"
-    ]
+    ],
+    "supply": {
+      "platform": "淘宝",
+      "listing_url": "https://www.taobao.com/list/item/694879830235.htm",
+      "source_urls": [
+        "https://www.taobao.com/list/item/694879830235.htm"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-08-24d03a53",
@@ -123,12 +188,22 @@
     "subtitle": "建议价带: 169.9-203.9 · 预估月销: 136 · low_competition, low_risk · 机会分 81.1",
     "badge": "推荐",
     "product_url": "https://www.taobao.com/list/item/536217498853.htm",
-    "image_url": "https://source.unsplash.com/640x480/?pet,water,fountain",
+    "image_url": "",
     "opportunity_score": 81.1,
     "source_urls": [
       "https://www.taobao.com/list/item/536217498853.htm",
       "https://www.taobao.com/list/item/682328821034.htm"
-    ]
+    ],
+    "supply": {
+      "platform": "淘宝",
+      "listing_url": "https://www.taobao.com/list/item/536217498853.htm",
+      "source_urls": [
+        "https://www.taobao.com/list/item/536217498853.htm",
+        "https://www.taobao.com/list/item/682328821034.htm"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-09-dda723cb",
@@ -140,11 +215,20 @@
     "subtitle": "建议价带: 15.0-18.0 · 预估月销: 182 · low_competition, low_risk · 机会分 76.7",
     "badge": null,
     "product_url": "https://www.taobao.com/list/item/625029265468.htm",
-    "image_url": "https://source.unsplash.com/640x480/?cat,toy",
+    "image_url": "",
     "opportunity_score": 76.7,
     "source_urls": [
       "https://www.taobao.com/list/item/625029265468.htm"
-    ]
+    ],
+    "supply": {
+      "platform": "淘宝",
+      "listing_url": "https://www.taobao.com/list/item/625029265468.htm",
+      "source_urls": [
+        "https://www.taobao.com/list/item/625029265468.htm"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   },
   {
     "id": "pet-10-b00055f1",
@@ -160,6 +244,15 @@
     "opportunity_score": 72.9,
     "source_urls": [
       "https://item.jd.com/10172878595247.html"
-    ]
+    ],
+    "supply": {
+      "platform": "京东",
+      "listing_url": "https://item.jd.com/10172878595247.html",
+      "source_urls": [
+        "https://item.jd.com/10172878595247.html"
+      ],
+      "mapped_at": "2026-05-19T09:45:01Z",
+      "provenance": "inferred_from_selection_row"
+    }
   }
 ]

@@ -4,8 +4,41 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+def iso_utc_z() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def build_supply(
+    row: dict[str, Any],
+    listing_url: str,
+    platform: str,
+    source_urls: list[str],
+) -> dict[str, Any] | None:
+    """Optional multi-platform source trace for procurement / RFQ (see README)."""
+    custom = row.get("supply")
+    if isinstance(custom, dict) and custom:
+        out = dict(custom)
+        if listing_url and not str(out.get("listing_url") or "").strip():
+            out["listing_url"] = listing_url
+        if platform and not str(out.get("platform") or "").strip():
+            out["platform"] = platform
+        if not str(out.get("mapped_at") or "").strip():
+            out["mapped_at"] = iso_utc_z()
+        return out
+    if not listing_url and not source_urls:
+        return None
+    return {
+        "platform": platform or "",
+        "listing_url": listing_url or "",
+        "source_urls": list(source_urls),
+        "mapped_at": iso_utc_z(),
+        "provenance": "inferred_from_selection_row",
+    }
 
 
 def to_slug(text: str, idx: int) -> str:
@@ -58,7 +91,14 @@ def row_to_product(row: dict[str, Any], idx: int) -> dict[str, Any]:
         image = ""
     platform = str(row.get("platform") or "").strip()
 
-    return {
+    src_list: list[str] = (
+        row.get("source_urls")
+        if isinstance(row.get("source_urls"), list)
+        else ([url] if url else [])
+    )
+    src_list = [str(u).strip() for u in src_list if str(u).strip()]
+
+    out: dict[str, Any] = {
         "id": pid,
         "name": name,
         "category": category,
@@ -70,8 +110,12 @@ def row_to_product(row: dict[str, Any], idx: int) -> dict[str, Any]:
         "product_url": url,
         "image_url": image,
         "opportunity_score": score,
-        "source_urls": row.get("source_urls") if isinstance(row.get("source_urls"), list) else ([url] if url else []),
+        "source_urls": src_list,
     }
+    supply = build_supply(row, url, platform, src_list)
+    if supply:
+        out["supply"] = supply
+    return out
 
 
 def main() -> int:
